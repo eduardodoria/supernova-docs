@@ -6,7 +6,7 @@ In Supernova file tree there is a ```main.lua``` file located in ```assets/lua/`
 
 Edit it with the code:
 
-```Lua
+``` lua
 Supernova.setCanvasSize(1000,480)
 
 cena = Scene()
@@ -32,7 +32,7 @@ In Supernova file tree there is a ```main.cpp``` file located in ```project/``` 
 
 Edit it with the code:
 
-```C++
+``` cpp
 #include "Supernova.h"
 
 #include "Scene.h"
