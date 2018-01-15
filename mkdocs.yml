@@ -17,7 +17,7 @@ theme:
 
 repo_name: 'deslon/supernova'
 repo_url: 'https://github.com/deslon/supernova'
-#edit_uri: ../supernova-docs/edit/master/docs
+edit_uri: ../supernova-docs/edit/master/docs
 
 extra:
   social:
