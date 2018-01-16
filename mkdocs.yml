@@ -1,24 +1,19 @@
 site_name: Supernova
 site_url: 'http://docs.supernovaegine.org'
+site_author: 'Eduardo Dória Lima'
+site_description: 'Supernova Engine documentation'
 
-pages:
-- Home: 'index.md'
-- Getting started:
-  - Creating a basic project: 'getting-started/creating-a-basic-project.md'
-  - Screen scaling: 'getting-started/screen-scaling.md'
-- Building:
-  - Building for Android: 'building/building-for-android.md'
-  - Building for iOS: 'building/building-for-ios.md'
-  - Building for HTML5: 'building/building-for-html5.md'
+repo_name: 'deslon/supernova'
+repo_url: 'https://github.com/deslon/supernova'
+edit_uri: '../supernova-docs/edit/master/docs'
 
 theme:
   name: 'material'
   logo: 'images/logo.svg'
   favicon: 'images/favicon.png'
-
-repo_name: 'deslon/supernova'
-repo_url: 'https://github.com/deslon/supernova'
-edit_uri: '../supernova-docs/edit/master/docs'
+  palette:
+    primary: 'blue grey'
+    accent: 'indigo'
 
 extra:
   social:
@@ -30,3 +25,13 @@ copyright: 'Copyright &copy; 2018, Eduardo Dória Lima (CC-BY 3.0)'
 markdown_extensions:
   - admonition
   - codehilite
+
+pages:
+- Home: 'index.md'
+- Getting started:
+  - Creating a basic project: 'getting-started/creating-a-basic-project.md'
+  - Screen scaling: 'getting-started/screen-scaling.md'
+- Building:
+  - Building for Android: 'building/building-for-android.md'
+  - Building for iOS: 'building/building-for-ios.md'
+  - Building for HTML5: 'building/building-for-html5.md'

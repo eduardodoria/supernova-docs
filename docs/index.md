@@ -2,8 +2,8 @@
 
 This is the official documentation and tutorials of Supernova. We are still in early development, so, therefore, these documents can still be very incomplete.
 
-!!! note
-    Supernova isn`t ready for production yet.
+!!! warning
+    **Supernova is not yet ready for production.**
 
 ### Getting started
 
