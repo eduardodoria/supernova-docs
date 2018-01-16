@@ -1,0 +1,1 @@
+[TimeAction](object-animation#timeaction) can be managed by ease functions.
