@@ -57,11 +57,3 @@ void init(){
 }
 ```
 If you have both Lua and C++ calling Supernova static method ```setScene()```, the last call will be from Lua, so C++ code will not work.
-
-## 3. Building project
-
-To build, you first have to choose desired platform. The following links are instructions for each platform. The same project code can run in any of them:
-
-[Compiling for Android](Compiling for Android)  
-[Compiling for iOS](Compiling for iOS)  
-[Compiling for HTML5 (Emscripten)](Compiling for HTML5 (Emscripten))

@@ -14,6 +14,8 @@ theme:
   palette:
     primary: 'blue grey'
     accent: 'indigo'
+  feature:
+    tabs: false
 
 extra:
   social:
@@ -24,7 +26,10 @@ copyright: 'Copyright &copy; 2018, Eduardo Dória Lima (CC-BY 3.0)'
 
 markdown_extensions:
   - admonition
-  - codehilite
+  - codehilite:
+      linenums: True
+  - toc:
+      permalink: true
 
 pages:
 - Home: 'index.md'

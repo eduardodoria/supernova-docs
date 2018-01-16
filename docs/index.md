@@ -1,4 +1,4 @@
-#Supernova Game Engine
+#Supernova Engine
 
 This is the official documentation and tutorials of Supernova. We are still in early development, so, therefore, these documents can still be very incomplete.
 

@@ -20,7 +20,7 @@ This is **default** mode. This keeps canvas width but floats height. Canvas can 
 Lua: ```Supernova.setScalingMode(Supernova.SCALING_FITWIDTH)```  
 C++: ```Supernova::setScalingMode(S_SCALING_FITWIDTH)```
 
-![Fitwidth](../images/imgs/Fitwidth.png)
+![Fitwidth](../images/Fitwidth.png)
 
 ### FitHeight
 
