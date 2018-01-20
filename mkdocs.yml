@@ -21,13 +21,14 @@ extra:
   social:
     - type: 'github'
       link: 'https://github.com/deslon/supernova'
+  version: 1.0
 
 copyright: 'Copyright &copy; 2018, Eduardo Dória Lima (CC-BY 3.0)'
 
 markdown_extensions:
   - admonition
-  - codehilite:
-      linenums: True
+  - codehilite
+#      linenums: True
   - toc:
       permalink: true
 
