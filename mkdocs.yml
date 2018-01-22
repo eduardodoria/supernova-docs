@@ -11,11 +11,14 @@ theme:
   name: 'material'
   logo: 'images/logo.svg'
   favicon: 'images/favicon.png'
-  palette:
-    primary: 'indigo'
-    accent: 'indigo'
+  #palette:
+  #  primary: 'indigo'
+  #  accent: 'indigo'
   feature:
     tabs: false
+
+extra_css:
+  - 'css/extra.css'
 
 extra:
   social:
