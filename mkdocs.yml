@@ -19,6 +19,10 @@ theme:
 
 extra_css:
   - 'css/extra.css'
+  - 'css/code-tabs.css'
+
+extra_javascript:
+  - 'js/code-tabs.js'
 
 extra:
   social:
@@ -34,14 +38,15 @@ markdown_extensions:
 #      linenums: True
   - toc:
       permalink: true
+  - markdown_fenced_code_tabs:
+      single_block_as_tab: True
 
 pages:
-- Home: 'index.md'
+- Introduction: 'index.md'
 - Learning:
   - Creating a basic project: 'learning/creating-a-basic-project.md'
   - Screen scaling: 'learning/screen-scaling.md'
   - Object animation: 'learning/object-animation.md'
-  - Ease functions: 'learning/ease-functions.md'
 - Building project:
   - Building for Android: 'building-project/building-for-android.md'
   - Building for iOS: 'building-project/building-for-ios.md'

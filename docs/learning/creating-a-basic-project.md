@@ -35,7 +35,7 @@ In Supernova file tree there is a ```main.cpp``` file located in ```project/``` 
 
 Edit it with the code:
 
-``` cpp
+``` c++
 #include "Supernova.h"
 
 #include "Scene.h"
