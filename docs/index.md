@@ -7,45 +7,34 @@ This is the official documentation and tutorials of Supernova. We are still in e
 
 <div style="display: flex">
   <div style="flex: 1; margin: 0 1em 0 0">
-    <strong>User accounts</strong>
-    <p>Every <a href="./user-accounts/">user</a> is registered and has a profile for other users to find and become friends with or join groups and chat.</p>
+    <strong>Made for programmers</strong>
+    <p>Take a control of your game code. This is a game engine for real programmers.</p>
   </div>
   <div style="flex: 1">
-    <strong>Friends</strong>
-    <p><a href="./social-friends/">Friends</a> are a great way to build a social community.</p>
+    <strong>Simple and Fast</strong>
+    <p>Supernova doesn't have unnecessary stuffs like heavy GUI and extra processing.</p>
   </div>
 </div>
 
 <div style="display: flex">
   <div style="flex: 1; margin: 0 1em 0 0">
-    <strong>Groups and Clans</strong>
-    <p>A <a href="./social-groups-clans/">group</a> brings together a bunch of users into a small community or team.</p>
+    <strong>Lua or C++</strong>
+    <p>You choose the best language is good for you. Lua and C++ can be used to make wonderful graphics and games.</p>
   </div>
   <div style="flex: 1">
-    <strong>Realtime chat</strong>
-    <p>Users can <a href="./social-realtime-chat/">chat</a> with each other 1-on-1, as part of a group, and in chat rooms.</p>
+    <strong>Cross-platform</strong>
+    <p>Write the code once and use it in Android, iOS and HTML5. It runs native in each platform with OpenGL ES.</p>
   </div>
 </div>
 
 <div style="display: flex">
   <div style="flex: 1; margin: 0 1em 0 0">
-    <strong>In-app notifications</strong>
-    <p><a href="./social-in-app-notifications/">In-app notifications</a> make it easy to broadcast a message to one or more users.</p>
+    <strong>Sprites and animations</strong>
+    <p>A <a href="./learning/sprites/">sprite</a> object makes everything easy when working with <a href="./learning/object-animation/">animations</a>.</p>
   </div>
   <div style="flex: 1">
-    <strong>Leaderboards</strong>
-    <p><a href="./gameplay-leaderboards/">Leaderboards</a> are a great way to add a social and competitive element to any game.</p>
-  </div>
-</div>
-
-<div style="display: flex">
-  <div style="flex: 1; margin: 0 1em 0 0">
-    <strong>Matchmaker</strong>
-    <p>The <a href="./gameplay-matchmaker/">matchmaker</a> makes it easy in realtime and turn-based games to find active opponents to play against.</p>
-  </div>
-  <div style="flex: 1">
-    <strong>Multiplayer</strong>
-    <p>The <a href="./gameplay-multiplayer-realtime/">multiplayer engine</a> makes it easy for users to set up and join matches where they can rapidly exchange data with opponents.</p>
+    <strong>Dynamic shadows</strong>
+    <p>You can use many kind of <a href="./learning/lights/">lights</a> with support for dynamic shadows.</p>
   </div>
 </div>
 
