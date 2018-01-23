@@ -38,6 +38,8 @@ This is the official documentation and tutorials of Supernova. We are still in e
   </div>
 </div>
 
+- - -
+
 ### Learning
 
 [Creating a basic project](learning/creating-a-basic-project)  
