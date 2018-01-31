@@ -7,7 +7,7 @@ repo_name: 'deslon/supernova'
 repo_url: 'https://github.com/deslon/supernova'
 edit_uri: '../supernova-docs/edit/master/docs'
 
-google_analytics: ['UA-113314204-2','supernovaengine.org']
+google_analytics: ['UA-113314204-2','docs.supernovaengine.org']
 
 theme:
   name: 'material'
