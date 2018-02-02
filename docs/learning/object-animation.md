@@ -4,16 +4,43 @@ There are these types of actions:
 
 * TimeAction
     * MoveAction
-    * RotationAction
+    * RotateAction
     * ScaleAction
     * ColorAction
     * AlphaAction
 * ParticlesAnimation
 * SpriteAnimation
 
+Any kind of **action** can be controlled with these tree commands:
+
+* ```run()```
+* ```stop()```
+* ```pause()```
+
 ## TimeAction
 
-TimeAction is a generic type of action that has the values ```time``` and ```value```. Both values can range from 0 to 1. The ```time``` is always fixed by duration, but ```value``` is calculated by an ease function. It can be controlled by both pre-defined functions and user-defined functions.
+TimeAction is a generic type of action that has the values ```time``` and ```value```. Both values can range from 0 to 1. The ```time``` is always fixed by a pre-defined duration, but ```value``` is calculated by an ease function. It can be controlled by both pre-defined functions and user-defined functions.
+
+``` lua
+action = MoveAction(object.position, Vector3(500,700,0), 2, true)
+action:setFunctionType(Action.ELASTIC_EASEINOUT)
+[...]
+object:addAction(acao)
+[...]
+action:run()
+```
+``` c++
+#include "action/MoveAction.h"
+using namespace Supernova;
+[...]
+MoveAction* action;
+action = new MoveAction(Vector3(100,200,0), Vector3(0,10,0), 2, false);
+action->setFunctionType(S_LINEAR);
+[...]
+object.addAction(action);
+[...]
+action->run();
+```
 
 ### Pre-defined functions
 
@@ -168,7 +195,13 @@ action.setFunction(newFunction);
 
 ## MoveAction
 
-This type is used to generate a movement in objects. First thing you need to do is create an ```MoveAction``` object.
+Is used to generate a movement in objects. The class parameter list is:
 
-Lua: ```action = MoveAction()```  
-C++: ```MoveAction action()```
+* **(start_position, end_position, time, loop)**
+
+``` lua
+action = MoveAction(Vector3(100,200,0), Vector3(0,10,0), 2, true)
+```
+``` c++
+action = new MoveAction(Vector3(100,200,0), Vector3(0,10,0), 2, false);
+```

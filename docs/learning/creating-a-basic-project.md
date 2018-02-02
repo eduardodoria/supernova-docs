@@ -42,6 +42,8 @@ Edit it with the code:
 #include "Shape.h"
 #include "Camera.h"
 
+using namespace Supernova;
+
 Shape triangulo;
 Scene cena;
 
