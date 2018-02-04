@@ -10,21 +10,21 @@ In Supernova file tree there is a ```main.lua``` file located in ```assets/lua/`
 Edit it with the code:
 
 ``` lua
-Supernova.setCanvasSize(1000,480)
+Engine.setCanvasSize(1000, 480)
 
-cena = Scene()
-triangulo = Shape()
+scene = Scene()
+triangle = Polygon()
 
-triangulo:addVertex(0, 100, 0)
-triangulo:addVertex(-50, -50, 0)
-triangulo:addVertex(50, -50, 0)
+triangle:addVertex(0, -100, 0)
+triangle:addVertex(-50, 50, 0)
+triangle:addVertex(50, 50, 0)
 
-triangulo:setPosition(300,300,0)
-triangulo:setColor(0.6, 0.2, 0.6, 1)
+triangle:setPosition(300, 300, 0)
+triangle:setColor(0.6, 0.2, 0.6, 1)
 
-cena:addObject(triangulo)
+scene:addObject(triangle)
 
-Supernova.setScene(cena)
+Engine.setScene(scene)
 ```
 
 Now you can **run** to see the result.
@@ -39,26 +39,26 @@ Edit it with the code:
 #include "Supernova.h"
 
 #include "Scene.h"
-#include "Shape.h"
+#include "Polygon.h"
 #include "Camera.h"
 
 using namespace Supernova;
 
-Shape triangulo;
-Scene cena;
+Polygon triangle;
+Scene scene;
 
 void init(){
-    Supernova::setCanvasSize(1000,480);
+    Engine::setCanvasSize(1000, 480);
 
-    triangulo.addVertex(Vector3(0, 100, 0));
-    triangulo.addVertex(Vector3(-50, -50, 0));
-    triangulo.addVertex(Vector3(50, -50, 0));
+    triangle.addVertex(Vector3(0, -100, 0));
+    triangle.addVertex(Vector3(-50, 50, 0));
+    triangle.addVertex(Vector3(50, 50, 0));
 
-    triangulo.setPosition(Vector3(300,300,0));
-    triangulo.setColor(0.6, 0.2, 0.6, 1);
-    cena.addObject(&triangulo);
+    triangle.setPosition(Vector3(300, 300, 0));
+    triangle.setColor(0.6, 0.2, 0.6, 1);
+    scene.addObject(&triangle);
 
-    Supernova::setScene(&cena);
+    Engine::setScene(&scene);
 }
 ```
 If you have both Lua and C++ calling Supernova static method ```setScene()```, the last call will be from Lua, so C++ code will not work.

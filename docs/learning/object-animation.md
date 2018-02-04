@@ -22,24 +22,81 @@ Any kind of **action** can be controlled with these tree commands:
 TimeAction is a generic type of action that has the values ```time``` and ```value```. Both values can range from 0 to 1. The ```time``` is always fixed by a pre-defined duration, but ```value``` is calculated by an ease function. It can be controlled by both pre-defined functions and user-defined functions.
 
 ``` lua
-action = MoveAction(object.position, Vector3(500,700,0), 2, true)
-action:setFunctionType(Action.ELASTIC_EASEINOUT)
-[...]
-object:addAction(acao)
-[...]
+Engine.setCanvasSize(1000,480)
+
+scene = Scene()
+triangle = Polygon()
+
+triangle:addVertex(0, -100, 0)
+triangle:addVertex(-50, 50, 0)
+triangle:addVertex(50, 50, 0)
+
+triangle:setPosition(300,300,0)
+triangle:setColor(0.6, 0.2, 0.6, 1)
+
+scene:addObject(triangle)
+
+action = MoveAction(triangle.position, Vector3(500,700,0), 2, true)
+
+action:setFunctionType(TimeAction.EASE_ELASTIC_IN_OUT)
+triangle:addAction(action)
 action:run()
+
+Engine.setScene(scene)
+
+function onTouchPress(x, y)
+    if (action:isRunning()) then
+        action:pause()
+    else
+        action:run()
+    end
+end
+Events:onTouchPress(onTouchPress);
 ```
 ``` c++
-#include "action/MoveAction.h"
+#include "Supernova.h"
+
+#include "Scene.h"
+#include "Polygon.h"
+#include "Camera.h"
+#include "MoveAction.h"
+
 using namespace Supernova;
-[...]
+
+Polygon triangle;
+Scene scene;
 MoveAction* action;
-action = new MoveAction(Vector3(100,200,0), Vector3(0,10,0), 2, false);
-action->setFunctionType(S_LINEAR);
-[...]
-object.addAction(action);
-[...]
-action->run();
+
+void onTouchPress(float x, float y);
+
+void init(){
+    Engine::setCanvasSize(1000, 480);
+
+    triangle.addVertex(Vector3(0, -100, 0));
+    triangle.addVertex(Vector3(-50, 50, 0));
+    triangle.addVertex(Vector3(50, 50, 0));
+
+    triangle.setPosition(Vector3(300, 300, 0));
+    triangle.setColor(0.6, 0.2, 0.6, 1);
+
+    scene.addObject(&triangle);
+
+    action = new MoveAction(triangle.getPosition(), Vector3(0,10,0), 2, true);
+
+    action->setFunctionType(S_LINEAR);
+    triangle.addAction(action);
+    action->run();
+
+    Engine::setScene(&scene);
+    Events::onTouchPress(onTouchPress);
+}
+
+void onTouchPress(float x, float y){
+    if (action->isRunning())
+        action->pause();
+    else
+        action->run();
+}
 ```
 
 ### Pre-defined functions
