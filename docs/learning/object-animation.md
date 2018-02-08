@@ -11,24 +11,47 @@ There are these types of actions:
 * ParticlesAnimation
 * SpriteAnimation
 
-Any kind of **action** can be controlled with these tree main controllers:
+### Action control
 
-* ```run()```
-* ```stop()```
-* ```pause()```
+Any kind of **action** can be controlled with these tree main methods:
+
+| Method | Description |
+| ----- | ----------- |
+| ```run()``` | Start an Action ou resume if is paused. |
+| ```stop()``` | Stop and reset it timestamp. |
+| ```pause()``` | Pause an Action, could be resumed with run(). |
+
+### Action events
 
 Also, you can use actions with these callback events:
 
-* ```onStart()```
-* ```onRun()```
-* ```onPause()```
-* ```onStop()```
-* ```onFinish()```
-* ```onStep()```
+| Event | Description |
+| ----- | ----------- |
+| ```onStart(Object*)``` | Called when Action is started (timestamp = 0). |
+| ```onRun(Object*)``` | When method run() is called. |
+| ```onPause(Object*)``` | When method pause() is called. |
+| ```onStop(Object*)``` | When method stop() is called. |
+| ```onFinish(Object*)``` | Called after finished Action. if loop is true this will never be called. |
+| ```onStep(Object*)``` | Called at each iteration. Usually sync with onDraw engine event. |
 
 ## TimeAction
 
-TimeAction is a generic type of action that has the values ```time``` and ```value```. Both values can range from 0 to 1. The ```time``` is always fixed by a pre-defined duration, but ```value``` is calculated by an ease function. It can be controlled by both pre-defined functions and user-defined functions.
+TimeAction is a generic type of action that has the values ```time``` and ```value```. Both values can range from 0 to 1. The ```time``` is always fixed by a pre-defined duration, but ```value``` is calculated by an ease function. ```Value``` can be controlled by both pre-defined functions and user-defined functions.
+
+Getting value and time from Action:
+
+``` c++
+float time = action.getTime();
+float value = action.getValue();
+```     
+``` lua
+time = action:getTime()
+value = action:getValue()
+```
+Class default constructor:  
+**TimeAction(time_in_seconds, loop)**
+
+Example how to use **TimeAction** that is activating on touch press and on every step triangle is moved:
 
 ``` c++
 #include "Supernova.h"
@@ -60,12 +83,10 @@ void init(){
 
     scene.addObject(&triangle);
 
-    //action = new MoveAction(triangle.getPosition(), Vector3(0,10,0), 2, true);
     action = new TimeAction(2, true);
 
     action->setFunctionType(S_LINEAR);
     triangle.addAction(action);
-    //action->run();
 
     action->onStep(onActionOnStep);
 
@@ -74,7 +95,7 @@ void init(){
 }
 
 void onActionOnStep(Object* object){
-    object->setPosition(object->getPosition().x,200);
+    object->setPosition(200 + action->getValue() * 100, 200);
 }
 
 void onTouchPress(float x, float y){
@@ -101,13 +122,13 @@ scene:addObject(triangle)
 
 action = TimeAction(2, false)
 
-action:setFunctionType(TimeAction.EASE_ELASTIC_IN_OUT)
+action:setFunctionType(TimeAction.LINEAR)
 triangle:addAction(action)
 
 Engine.setScene(scene)
 
 function onActionOnStep(object)
-    object:setPosition2D(100, 500);
+    object:setPosition2D(200 + action:getValue() * 100, 200);
 end
 action:onStep(onActionOnStep);
 
@@ -121,7 +142,7 @@ end
 Events:onTouchPress(onTouchPress);
 ```
 
-This is an example of MoveAction from TimeAction:
+Similar to the previous example, the same function can be used with **MoveAction** instead of **TimeAction**. This time it is no longer necessary to use ```onStep()```:
 
 ``` c++
 #include "Supernova.h"
@@ -201,7 +222,7 @@ end
 Events:onTouchPress(onTouchPress);
 ```
 
-### Pre-defined functions
+### Pre-defined ease functions
 
 #### Linear
 ![Linear](../images/ease/linear.png)
@@ -332,7 +353,7 @@ action:setFunctionType(TimeAction.EASE_BOUNCE_OUT);
 action:setFunctionType(TimeAction.EASE_BOUNCE_IN_OUT);
 ```
 
-### User-defined functions
+### User-defined ease functions
 
 It's also possible to create new functions and attach it to a TimeAction.
 
@@ -354,13 +375,91 @@ action:setFunction(newFunction);
 
 ## MoveAction
 
-Is used to generate a movement in objects. The class parameter list is:
+Is used to generate a movement in objects.
 
-* **(start_position, end_position, time, loop)**
+Class default constructor:  
+**MoveAction(start_position, end_position, time_in_seconds, loop)**
 
 ``` c++
 action = new MoveAction(Vector3(100,200,0), Vector3(0,10,0), 2, false);
 ```
 ``` lua
 action = MoveAction(Vector3(100,200,0), Vector3(0,10,0), 2, true)
+```
+
+## RotateAction
+
+Is used to generate rotation in objects. Rotations are made by quaternions, but you can easily a create quaternions with angles.
+
+Class default constructor:  
+**RotateAction(start_rotation, end_rotation, time_in_seconds, loop)**
+
+``` c++
+Quaternion fromAngle;
+fromAngle.fromAngle(20);
+
+Quaternion toAngle;
+toAngle.fromAngle(80);
+
+action = new RotateAction(fromAngle, toAngle, 5, true);
+```
+``` lua
+fromAngle = Quaternion()
+fromAngle:fromAngle(20)
+
+toAngle = Quaternion()
+toAngle:fromAngle(80)
+
+action = RotateAction(fromAngle, toAngle, 2, true)
+```
+
+For default, a Quaternion method fromAngleAxis uses axis Z (for 2D projects) to perform a rotation, but it`s also possible to make rotations for any axis:
+
+``` c++
+fromAngle.fromAngleAxis(20, Vector3(0, 1, 0));
+```
+``` lua
+fromAngle:fromAngleAxis(10, Vector3(0,1,0))
+```
+
+## ScaleAction
+
+Is used to change object scale. Scales are setting by Vector3. For example, if you want increase the object 3 times from Y axis you can use ```Vector3(1, 3, 1)```.
+
+Class default constructor:  
+**ScaleAction(start_scale, end_scale, time_in_seconds, loop)**
+
+``` c++
+action = new ScaleAction(Vector3(1,1,1), Vector3(1,10,1), 2, true);
+```
+``` lua
+action = ScaleAction(Vector3(1,1,1), Vector3(1,10,1), 2, true)
+```
+
+## ColorAction
+
+Is used to change the color of object.
+
+Class default constructor:  
+**ColorAction(start_red, start_green, start_blue, end_red, end_green, end_blue, time_in_seconds, loop)**
+
+``` c++
+action = new ColorAction(0, 0.5, 0.8, 1, 0.4, 0, 5, true);
+```
+``` lua
+action = ColorAction(0, 0.5, 0.8, 1, 0.4, 0, 5, true)
+```
+
+## AlphaAction
+
+Is used to change alpha factor of object. Alpha 1.0 é full opaque object and alpha 0.0 is full transparent object.
+
+Class default constructor:  
+**AlphaAction(start_alpha, end_alpha, time_in_seconds, loop)**
+
+``` c++
+action = new AlphaAction(1, 0, 5, true);
+```
+``` lua
+action = AlphaAction(1, 0, 5, true)
 ```

@@ -45,11 +45,12 @@ markdown_extensions:
 
 pages:
 - Introduction: 'index.md'
+- Getting started:
+  - Creating a basic project: 'getting-started/creating-a-basic-project.md'
+  - Building project:
+    - Building for Android: 'getting-started/building-project/building-for-android.md'
+    - Building for iOS: 'getting-started/building-project/building-for-ios.md'
+    - Building for HTML5: 'getting-started/building-project/building-for-html5.md'
 - Learning:
-  - Creating a basic project: 'learning/creating-a-basic-project.md'
   - Screen scaling: 'learning/screen-scaling.md'
   - Object animation: 'learning/object-animation.md'
-- Building project:
-  - Building for Android: 'building-project/building-for-android.md'
-  - Building for iOS: 'building-project/building-for-ios.md'
-  - Building for HTML5: 'building-project/building-for-html5.md'
