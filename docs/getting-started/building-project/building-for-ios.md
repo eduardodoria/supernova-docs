@@ -4,11 +4,11 @@
 
 Execute in terminal:
 
-```git clone https://github.com/Deslon/Supernova.git```
+```git clone https://github.com/deslon/supernova.git```
 
-### 2. Download XCode
+### 2. Download Xcode
 
 ### 3. Open project
 
-In Supernova directory, open XCode project workspace in: ```workspaces/ios/```
+In Supernova directory, open Xcode project workspace in: ```workspaces/ios/```
 

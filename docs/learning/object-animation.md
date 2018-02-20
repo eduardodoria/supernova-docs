@@ -206,7 +206,7 @@ scene:addObject(triangle)
 
 action = MoveAction(triangle.position, Vector3(500,700,0), 2, true)
 
-action:setFunctionType(TimeAction.EASE_ELASTIC_IN_OUT)
+action:setFunctionType(Action.EASE_ELASTIC_IN_OUT)
 triangle:addAction(action)
 action:run()
 
@@ -240,9 +240,9 @@ action.setFunctionType(S_EASE_QUAD_OUT);
 action.setFunctionType(S_EASE_QUAD_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_QUAD_IN);
-action:setFunctionType(TimeAction.EASE_QUAD_OUT);
-action:setFunctionType(TimeAction.EASE_QUAD_IN_OUT);
+action:setFunctionType(Action.EASE_QUAD_IN);
+action:setFunctionType(Action.EASE_QUAD_OUT);
+action:setFunctionType(Action.EASE_QUAD_IN_OUT);
 ```
 #### Cubic
 ![Cubic](../images/ease/easeCubic.png)
@@ -252,9 +252,9 @@ action.setFunctionType(S_EASE_CUBIC_OUT);
 action.setFunctionType(S_EASE_CUBIC_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_CUBIC_IN);
-action:setFunctionType(TimeAction.EASE_CUBIC_OUT);
-action:setFunctionType(TimeAction.EASE_CUBIC_IN_OUT);
+action:setFunctionType(Action.EASE_CUBIC_IN);
+action:setFunctionType(Action.EASE_CUBIC_OUT);
+action:setFunctionType(Action.EASE_CUBIC_IN_OUT);
 ```
 #### Quart
 ![Quart](../images/ease/easeQuart.png)
@@ -264,9 +264,9 @@ action.setFunctionType(S_EASE_QUART_OUT);
 action.setFunctionType(S_EASE_QUART_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_QUART_IN);
-action:setFunctionType(TimeAction.EASE_QUART_OUT);
-action:setFunctionType(TimeAction.EASE_QUART_IN_OUT);
+action:setFunctionType(Action.EASE_QUART_IN);
+action:setFunctionType(Action.EASE_QUART_OUT);
+action:setFunctionType(Action.EASE_QUART_IN_OUT);
 ```
 #### Quint
 ![Quint](../images/ease/easeQuint.png)
@@ -276,9 +276,9 @@ action.setFunctionType(S_EASE_QUINT_OUT);
 action.setFunctionType(S_EASE_QUINT_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_QUINT_IN);
-action:setFunctionType(TimeAction.EASE_QUINT_OUT);
-action:setFunctionType(TimeAction.EASE_QUINT_IN_OUT);
+action:setFunctionType(Action.EASE_QUINT_IN);
+action:setFunctionType(Action.EASE_QUINT_OUT);
+action:setFunctionType(Action.EASE_QUINT_IN_OUT);
 ```
 #### Sine
 ![Sine](../images/ease/easeSine.png)
@@ -288,9 +288,9 @@ action.setFunctionType(S_EASE_SINE_OUT);
 action.setFunctionType(S_EASE_SINE_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_SINE_IN);
-action:setFunctionType(TimeAction.EASE_SINE_OUT);
-action:setFunctionType(TimeAction.EASE_SINE_IN_OUT);
+action:setFunctionType(Action.EASE_SINE_IN);
+action:setFunctionType(Action.EASE_SINE_OUT);
+action:setFunctionType(Action.EASE_SINE_IN_OUT);
 ```
 #### Expo
 ![Expo](../images/ease/easeExpo.png)
@@ -300,9 +300,9 @@ action.setFunctionType(S_EASE_EXPO_OUT);
 action.setFunctionType(S_EASE_EXPO_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_EXPO_IN);
-action:setFunctionType(TimeAction.EASE_EXPO_OUT);
-action:setFunctionType(TimeAction.EASE_EXPO_IN_OUT);
+action:setFunctionType(Action.EASE_EXPO_IN);
+action:setFunctionType(Action.EASE_EXPO_OUT);
+action:setFunctionType(Action.EASE_EXPO_IN_OUT);
 ```
 #### Circ
 ![Circ](../images/ease/easeCirc.png)
@@ -312,9 +312,9 @@ action.setFunctionType(S_EASE_CIRC_OUT);
 action.setFunctionType(S_EASE_CIRC_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_CIRC_IN);
-action:setFunctionType(TimeAction.EASE_CIRC_OUT);
-action:setFunctionType(TimeAction.EASE_CIRC_IN_OUT);
+action:setFunctionType(Action.EASE_CIRC_IN);
+action:setFunctionType(Action.EASE_CIRC_OUT);
+action:setFunctionType(Action.EASE_CIRC_IN_OUT);
 ```
 #### Elastic
 ![Elastic](../images/ease/easeElastic.png)
@@ -324,9 +324,9 @@ action.setFunctionType(S_EASE_ELASTIC_OUT);
 action.setFunctionType(S_EASE_ELASTIC_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_ELASTIC_IN);
-action:setFunctionType(TimeAction.EASE_ELASTIC_OUT);
-action:setFunctionType(TimeAction.EASE_ELASTIC_IN_OUT);
+action:setFunctionType(Action.EASE_ELASTIC_IN);
+action:setFunctionType(Action.EASE_ELASTIC_OUT);
+action:setFunctionType(Action.EASE_ELASTIC_IN_OUT);
 ```
 #### Back
 ![Back](../images/ease/easeBack.png)
@@ -336,9 +336,9 @@ action.setFunctionType(S_EASE_BACK_OUT);
 action.setFunctionType(S_EASE_BACK_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_BACK_IN);
-action:setFunctionType(TimeAction.EASE_BACK_OUT);
-action:setFunctionType(TimeAction.EASE_BACK_IN_OUT);
+action:setFunctionType(Action.EASE_BACK_IN);
+action:setFunctionType(Action.EASE_BACK_OUT);
+action:setFunctionType(Action.EASE_BACK_IN_OUT);
 ```
 #### Bounce
 ![Bounce](../images/ease/easeBounce.png)
@@ -348,9 +348,9 @@ action.setFunctionType(S_EASE_BOUNCE_OUT);
 action.setFunctionType(S_EASE_BOUNCE_IN_OUT);
 ```
 ``` lua
-action:setFunctionType(TimeAction.EASE_BOUNCE_IN);
-action:setFunctionType(TimeAction.EASE_BOUNCE_OUT);
-action:setFunctionType(TimeAction.EASE_BOUNCE_IN_OUT);
+action:setFunctionType(Action.EASE_BOUNCE_IN);
+action:setFunctionType(Action.EASE_BOUNCE_OUT);
+action:setFunctionType(Action.EASE_BOUNCE_IN_OUT);
 ```
 
 ### User-defined ease functions

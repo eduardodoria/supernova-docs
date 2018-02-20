@@ -47,6 +47,7 @@ pages:
 - Introduction: 'index.md'
 - Getting started:
   - Creating a basic project: 'getting-started/creating-a-basic-project.md'
+  - Coordinate systems: 'getting-started/coordinate-systems.md'
   - Building project:
     - Building for Android: 'getting-started/building-project/building-for-android.md'
     - Building for iOS: 'getting-started/building-project/building-for-ios.md'
@@ -54,3 +55,4 @@ pages:
 - Learning:
   - Screen scaling: 'learning/screen-scaling.md'
   - Object animation: 'learning/object-animation.md'
+  - Particle system: 'learning/particle-system.md'

@@ -43,15 +43,22 @@ This is the official documentation and tutorials of Supernova. We are still in e
 
 - - -
 
+
+
+### Getting started
+
+[Creating a basic project](getting-started/creating-a-basic-project)  
+[Coordinate systems](getting-started/coordinate-systems)  
+
+#### Building Supernova
+
+[Building for Android](getting-started/building-project/building-for-android)  
+[Building for iOS](getting-started/building-project/building-for-ios)  
+[Building for HTML5 (Emscripten)](getting-started/building-project/building-for-html5)
+
 ### Learning
 
-[Creating a basic project](learning/creating-a-basic-project)  
 [Screen scaling](learning/screen-scaling)  
 [Object animation](learning/object-animation)   
-
-### Building Supernova
-
-[Building for Android](building-project/building-for-android)  
-[Building for iOS](building-project/building-for-ios)  
-[Building for HTML5 (Emscripten)](building-project/building-for-html5)
+[Particle system](learning/particle-system)   
 

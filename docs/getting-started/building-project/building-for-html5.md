@@ -7,11 +7,11 @@
 
 Execute in terminal:
 
-```git clone https://github.com/Deslon/Supernova.git```
+```git clone https://github.com/deslon/supernova.git```
 
 #### For Windows:
 
-On GitHub, navigate to the main page of the repository.
+On Github, navigate to the main page of the repository.
 
 Under your repository name, click **Clone or download**.
 
@@ -25,15 +25,13 @@ Follow instructions depending of your platform:
 
 https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#installation-instructions
 
-We recommend to use version 1.35.0, because latest version (1.36.x) has a issue that can create wrong warnings (https://github.com/kripken/emscripten/issues/4234).
-
 For Linux and OSX you can do:
 ```
 ./emsdk update
 
-./emsdk install sdk-1.35.0-64bit
+./emsdk install sdk-1.37.19-64bit
 
-./emsdk activate sdk-1.35.0-64bit
+./emsdk activate sdk-1.37.19-64bit
 ```
 For Windows, there is a simple installer.
 
