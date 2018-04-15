@@ -49,7 +49,7 @@ time = action:getTime()
 value = action:getValue()
 ```
 Class default constructor:  
-**TimeAction(time_in_seconds, loop)**
+**TimeAction(float duration, bool loop)**
 
 Example how to use **TimeAction** that is activating on touch press and on every step triangle is moved:
 
@@ -378,7 +378,7 @@ action:setFunction(newFunction);
 Is used to generate a movement in objects.
 
 Class default constructor:  
-**MoveAction(start_position, end_position, time_in_seconds, loop)**
+**MoveAction(Vector3 startPosition, Vector3 endPosition, float duration, bool loop=false)**
 
 ``` c++
 action = new MoveAction(Vector3(100,200,0), Vector3(0,10,0), 2, false);
@@ -392,7 +392,7 @@ action = MoveAction(Vector3(100,200,0), Vector3(0,10,0), 2, true)
 Is used to generate rotation in objects. Rotations are made by quaternions, but you can easily a create quaternions with angles.
 
 Class default constructor:  
-**RotateAction(start_rotation, end_rotation, time_in_seconds, loop)**
+**RotateAction(Quaternion startRotation, Quaternion endRotation, float duration, bool loop=false)**
 
 ``` c++
 Quaternion fromAngle;
@@ -427,7 +427,7 @@ fromAngle:fromAngleAxis(10, Vector3(0,1,0))
 Is used to change object scale. Scales are setting by Vector3. For example, if you want increase the object 3 times from Y axis you can use ```Vector3(1, 3, 1)```.
 
 Class default constructor:  
-**ScaleAction(start_scale, end_scale, time_in_seconds, loop)**
+**ScaleAction(Vector3 startScale, Vector3 endScalel, float duration, bool loop=false)**
 
 ``` c++
 action = new ScaleAction(Vector3(1,1,1), Vector3(1,10,1), 2, true);
@@ -441,7 +441,7 @@ action = ScaleAction(Vector3(1,1,1), Vector3(1,10,1), 2, true)
 Is used to change the color of object.
 
 Class default constructor:  
-**ColorAction(start_red, start_green, start_blue, end_red, end_green, end_blue, time_in_seconds, loop)**
+**ColorAction(float startRed, float startGreen, float startBlue, float endRed, float endGreen, float endBlue, float duration, bool loop=false)**
 
 ``` c++
 action = new ColorAction(0, 0.5, 0.8, 1, 0.4, 0, 5, true);
@@ -455,7 +455,7 @@ action = ColorAction(0, 0.5, 0.8, 1, 0.4, 0, 5, true)
 Is used to change alpha factor of object. Alpha 1.0 é full opaque object and alpha 0.0 is full transparent object.
 
 Class default constructor:  
-**AlphaAction(start_alpha, end_alpha, time_in_seconds, loop)**
+**AlphaAction(float startAlpha, float endAlpha, float duration, bool loop=false)**
 
 ``` c++
 action = new AlphaAction(1, 0, 5, true);
