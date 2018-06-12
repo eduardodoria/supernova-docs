@@ -88,10 +88,10 @@ void init(){
     action->setFunctionType(S_LINEAR);
     triangle.addAction(action);
 
-    action->onStep(onActionOnStep);
+    action->onStep = onActionOnStep;
 
     Engine::setScene(&scene);
-    Events::onTouchPress(onTouchPress);
+    Engine::onTouchPress = onTouchPress;
 }
 
 void onActionOnStep(Object* object){
@@ -130,7 +130,7 @@ Engine.setScene(scene)
 function onActionOnStep(object)
     object:setPosition2D(200 + action:getValue() * 100, 200);
 end
-action:onStep(onActionOnStep);
+action.onStep = onActionOnStep
 
 function onTouchPress(x, y)
     if (action:isRunning()) then
@@ -139,7 +139,7 @@ function onTouchPress(x, y)
         action:run()
     end
 end
-Events:onTouchPress(onTouchPress);
+Events.onTouchPress = onTouchPress
 ```
 
 Similar to the previous example, the same function can be used with **MoveAction** instead of **TimeAction**. This time it is no longer necessary to use ```onStep()```:
@@ -179,7 +179,7 @@ void init(){
     action->run();
 
     Engine::setScene(&scene);
-    Events::onTouchPress(onTouchPress);
+    Engine::onTouchPress = onTouchPress;
 }
 
 void onTouchPress(float x, float y){
@@ -219,7 +219,7 @@ function onTouchPress(x, y)
         action:run()
     end
 end
-Events:onTouchPress(onTouchPress);
+Events.onTouchPress = onTouchPress;
 ```
 
 ### Pre-defined ease functions
