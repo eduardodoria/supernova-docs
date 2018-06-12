@@ -51,7 +51,7 @@ value = action:getValue()
 Class default constructor:  
 **TimeAction(float duration, bool loop)**
 
-Example how to use **TimeAction** that is activating on touch press and on every step triangle is moved:
+Example how to use **TimeAction** that is activating on touch start and on every step triangle is moved:
 
 ``` c++
 #include "Supernova.h"
@@ -69,7 +69,7 @@ Scene scene;
 TimeAction* action;
 
 void onActionOnStep(Object* object);
-void onTouchPress(float x, float y);
+void onTouchStart(float x, float y);
 
 void init(){
     Engine::setCanvasSize(1000, 480);
@@ -98,7 +98,7 @@ void onActionOnStep(Object* object){
     object->setPosition(200 + action->getValue() * 100, 200);
 }
 
-void onTouchPress(float x, float y){
+void onTouchStart(float x, float y){
     if (action->isRunning())
         action->pause();
     else
@@ -132,14 +132,14 @@ function onActionOnStep(object)
 end
 action.onStep = onActionOnStep
 
-function onTouchPress(x, y)
+function onTouchStart(x, y)
     if (action:isRunning()) then
         action:pause()
     else
         action:run()
     end
 end
-Events.onTouchPress = onTouchPress
+Engine.onTouchPress = onTouchPress
 ```
 
 Similar to the previous example, the same function can be used with **MoveAction** instead of **TimeAction**. This time it is no longer necessary to use ```onStep()```:
@@ -158,7 +158,7 @@ Polygon triangle;
 Scene scene;
 MoveAction* action;
 
-void onTouchPress(float x, float y);
+void onTouchStart(float x, float y);
 
 void init(){
     Engine::setCanvasSize(1000, 480);
@@ -182,7 +182,7 @@ void init(){
     Engine::onTouchPress = onTouchPress;
 }
 
-void onTouchPress(float x, float y){
+void onTouchStart(float x, float y){
     if (action->isRunning())
         action->pause();
     else
@@ -212,14 +212,14 @@ action:run()
 
 Engine.setScene(scene)
 
-function onTouchPress(x, y)
+function onTouchStart(x, y)
     if (action:isRunning()) then
         action:pause()
     else
         action:run()
     end
 end
-Events.onTouchPress = onTouchPress;
+Engine.onTouchPress = onTouchPress;
 ```
 
 ### Pre-defined ease functions
