@@ -17,8 +17,8 @@ There are 5 types of scaling mode divided by 2 categories:
 
 This is **default** mode. This keeps canvas width but floats height. Canvas can be changed from original format, but only height changes. Should be used ```getPreferedCanvasWidth()```and ```getPreferedCanvasHeight()``` to get original canvas size.
 
-C++: ```Supernova::setScalingMode(S_SCALING_FITWIDTH)```    
-Lua: ```Supernova.setScalingMode(Supernova.SCALING_FITWIDTH)```
+C++: ```Engine::setScalingMode(Scaling::FITWIDTH)```    
+Lua: ```Engine.setScalingMode(Engine.SCALING_FITWIDTH)```
 
 ![Fitwidth](../images/Fitwidth.png)
 
@@ -26,8 +26,8 @@ Lua: ```Supernova.setScalingMode(Supernova.SCALING_FITWIDTH)```
 
 It is similar to FitWidth. This keeps canvas height but floats width. Canvas can be changed from original format, but only width changes. Should be used ```getPreferedCanvasWidth()```and ```getPreferedCanvasHeight()``` to get original canvas size.
 
-C++: ```Supernova::setScalingMode(S_SCALING_FITHEIGHT)```   
-Lua: ```Supernova.setScalingMode(Supernova.SCALING_FITHEIGHT)```
+C++: ```Engine::setScalingMode(Scaling::FITHEIGHT)```   
+Lua: ```Engine.setScalingMode(Engine.SCALING_FITHEIGHT)```
 
 ![Fitheight](../images/Fitheight.png)
 
@@ -37,8 +37,8 @@ Lua: ```Supernova.setScalingMode(Supernova.SCALING_FITHEIGHT)```
 
 This keeps canvas width and height but empty spaces can be show on screen.
 
-C++: ```Supernova::setScalingMode(S_SCALING_LETTERBOX)```   
-Lua: ```Supernova.setScalingMode(Supernova.SCALING_LETTERBOX)```
+C++: ```Engine::setScalingMode(Scaling::LETTERBOX)```   
+Lua: ```Engine.setScalingMode(Engine.SCALING_LETTERBOX)```
 
 ![Letterbox](../images/Letterbox.png)
 
@@ -46,8 +46,8 @@ Lua: ```Supernova.setScalingMode(Supernova.SCALING_LETTERBOX)```
 
 This keeps canvas width and height but part of canvas can be out of screen (not in visible area).
 
-C++: ```Supernova::setScalingMode(S_SCALING_CROP)```    
-Lua: ```Supernova.setScalingMode(Supernova.SCALING_CROP)```
+C++: ```Engine::setScalingMode(Scaling::CROP)```    
+Lua: ```Engine.setScalingMode(Engine.SCALING_CROP)```
 
 ![Crop](../images/Crop.png)
 
@@ -55,7 +55,7 @@ Lua: ```Supernova.setScalingMode(Supernova.SCALING_CROP)```
 
 This keeps canvas width and height but scene objects can deform.
 
-C++: ```Supernova::setScalingMode(S_SCALING_STRETCH)```     
-Lua: ```Supernova.setScalingMode(Supernova.SCALING_STRETCH)```
+C++: ```Engine::setScalingMode(Scaling::STRETCH)```     
+Lua: ```Engine.setScalingMode(Engine.SCALING_STRETCH)```
 
 ![Stretch](../images/Stretch.png)
