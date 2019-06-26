@@ -43,7 +43,7 @@ markdown_extensions:
   - markdown_fenced_code_tabs:
       single_block_as_tab: True
 
-pages:
+nav:
 - Introduction: 'index.md'
 - Getting started:
   - Creating a basic project: 'getting-started/creating-a-basic-project.md'
