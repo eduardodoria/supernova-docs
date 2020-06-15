@@ -28,7 +28,7 @@ extra_javascript:
 
 extra:
   social:
-    - icon: 'github'
+    - icon: 'fontawesome/brands/github-alt'
       link: 'https://github.com/deslon/supernova'
   version: 1.0
 
