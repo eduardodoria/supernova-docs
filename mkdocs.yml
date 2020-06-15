@@ -28,7 +28,7 @@ extra_javascript:
 
 extra:
   social:
-    - type: 'github'
+    - icon: 'github'
       link: 'https://github.com/deslon/supernova'
   version: 1.0
 
