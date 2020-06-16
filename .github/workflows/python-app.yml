@@ -1,10 +1,6 @@
 name: MKDocs documentation
 
-on:
-  push:
-    branches: [ master, testing-actions ]
-  pull_request:
-    branches: [ master ]
+on: [push, pull_request]
 
 jobs:
   build_docs:
