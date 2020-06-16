@@ -9,10 +9,9 @@ edit_uri: '../supernova-docs/edit/master/docs'
 
 google_analytics: ['UA-113314204-2','docs.supernovaengine.org']
 
-announce: 'Testing announces'
-
 theme:
   name: 'material'
+  custom_dir: 'overrides'
   logo: 'images/logo.svg'
   favicon: 'images/favicon.png'
   #palette:
