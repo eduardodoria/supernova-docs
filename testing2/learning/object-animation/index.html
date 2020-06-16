@@ -1,0 +1,1313 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Supernova Engine documentation">
+      
+      
+        <link rel="canonical" href="http://docs.supernovaegine.org/learning/object-animation/">
+      
+      
+        <meta name="author" content="Eduardo Dória Lima">
+      
+      <link rel="shortcut icon" href="../../images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.0">
+    
+    
+      
+        <title>Object animation - Supernova</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6e35a1a6.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="../../css/code-tabs.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-113314204-2","docs.supernovaengine.org"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#action-control" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+This is not docs, only for testing. Go to website <a href="http://docs.supernovaengine.org">here</a>
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="http://docs.supernovaegine.org" title="Supernova" class="md-header-nav__button md-logo" aria-label="Supernova">
+      
+  <img src="../../images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Supernova
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Object animation
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/deslon/supernova/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deslon/supernova
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="http://docs.supernovaegine.org" title="Supernova" class="md-nav__button md-logo" aria-label="Supernova">
+      
+  <img src="../../images/logo.svg" alt="logo">
+
+    </a>
+    Supernova
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/deslon/supernova/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    deslon/supernova
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Getting started
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Getting started" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Getting started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/creating-a-basic-project/" title="Creating a basic project" class="md-nav__link">
+      Creating a basic project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/coordinate-systems/" title="Coordinate systems" class="md-nav__link">
+      Coordinate systems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Building project
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Building project" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Building project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/building-project/building-for-android/" title="Building for Android" class="md-nav__link">
+      Building for Android
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/building-project/building-for-ios/" title="Building for iOS" class="md-nav__link">
+      Building for iOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/building-project/building-for-html5/" title="Building for HTML5" class="md-nav__link">
+      Building for HTML5
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Learning
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Learning" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Learning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../screen-scaling/" title="Screen scaling" class="md-nav__link">
+      Screen scaling
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Object animation
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Object animation" class="md-nav__link md-nav__link--active">
+      Object animation
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#action-control" class="md-nav__link">
+    Action control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-events" class="md-nav__link">
+    Action events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeaction" class="md-nav__link">
+    TimeAction
+  </a>
+  
+    <nav class="md-nav" aria-label="TimeAction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-defined-ease-functions" class="md-nav__link">
+    Pre-defined ease functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-defined ease functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear" class="md-nav__link">
+    Linear
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quad" class="md-nav__link">
+    Quad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cubic" class="md-nav__link">
+    Cubic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quart" class="md-nav__link">
+    Quart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quint" class="md-nav__link">
+    Quint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sine" class="md-nav__link">
+    Sine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expo" class="md-nav__link">
+    Expo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circ" class="md-nav__link">
+    Circ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elastic" class="md-nav__link">
+    Elastic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back" class="md-nav__link">
+    Back
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bounce" class="md-nav__link">
+    Bounce
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-defined-ease-functions" class="md-nav__link">
+    User-defined ease functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moveaction" class="md-nav__link">
+    MoveAction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotateaction" class="md-nav__link">
+    RotateAction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaleaction" class="md-nav__link">
+    ScaleAction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coloraction" class="md-nav__link">
+    ColorAction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alphaaction" class="md-nav__link">
+    AlphaAction
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../particle-system/" title="Particle system" class="md-nav__link">
+      Particle system
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#action-control" class="md-nav__link">
+    Action control
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#action-events" class="md-nav__link">
+    Action events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timeaction" class="md-nav__link">
+    TimeAction
+  </a>
+  
+    <nav class="md-nav" aria-label="TimeAction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pre-defined-ease-functions" class="md-nav__link">
+    Pre-defined ease functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-defined ease functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linear" class="md-nav__link">
+    Linear
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quad" class="md-nav__link">
+    Quad
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cubic" class="md-nav__link">
+    Cubic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quart" class="md-nav__link">
+    Quart
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quint" class="md-nav__link">
+    Quint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sine" class="md-nav__link">
+    Sine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expo" class="md-nav__link">
+    Expo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#circ" class="md-nav__link">
+    Circ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elastic" class="md-nav__link">
+    Elastic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#back" class="md-nav__link">
+    Back
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bounce" class="md-nav__link">
+    Bounce
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-defined-ease-functions" class="md-nav__link">
+    User-defined ease functions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moveaction" class="md-nav__link">
+    MoveAction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotateaction" class="md-nav__link">
+    RotateAction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scaleaction" class="md-nav__link">
+    ScaleAction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coloraction" class="md-nav__link">
+    ColorAction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#alphaaction" class="md-nav__link">
+    AlphaAction
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/deslon/supernova-docs/edit/master/docs/learning/object-animation.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Object animation</h1>
+                
+                <p>It`s possible to animate any object. This page explains how to make the animation work in many ways and ease functions. Animations in Supernova are made by Actions. These Actions can be used in all Scene objects.</p>
+<p>There are these types of actions:</p>
+<ul>
+<li>TimeAction<ul>
+<li>MoveAction</li>
+<li>RotateAction</li>
+<li>ScaleAction</li>
+<li>ColorAction</li>
+<li>AlphaAction</li>
+</ul>
+</li>
+<li>ParticlesAnimation</li>
+<li>SpriteAnimation</li>
+</ul>
+<h3 id="action-control">Action control<a class="headerlink" href="#action-control" title="Permanent link">&para;</a></h3>
+<p>Any kind of <strong>action</strong> can be controlled with these tree main methods:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>run()</code></td>
+<td>Start an Action ou resume if is paused.</td>
+</tr>
+<tr>
+<td><code>stop()</code></td>
+<td>Stop and reset it timestamp.</td>
+</tr>
+<tr>
+<td><code>pause()</code></td>
+<td>Pause an Action, could be resumed with run().</td>
+</tr>
+</tbody>
+</table>
+<h3 id="action-events">Action events<a class="headerlink" href="#action-events" title="Permanent link">&para;</a></h3>
+<p>Also, you can use actions with these callback events:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onStart(Object*)</code></td>
+<td>Called when Action is started (timestamp = 0).</td>
+</tr>
+<tr>
+<td><code>onRun(Object*)</code></td>
+<td>When method run() is called.</td>
+</tr>
+<tr>
+<td><code>onPause(Object*)</code></td>
+<td>When method pause() is called.</td>
+</tr>
+<tr>
+<td><code>onStop(Object*)</code></td>
+<td>When method stop() is called.</td>
+</tr>
+<tr>
+<td><code>onFinish(Object*)</code></td>
+<td>Called after finished Action. if loop is true this will never be called.</td>
+</tr>
+<tr>
+<td><code>onStep(Object*)</code></td>
+<td>Called at each iteration. Usually sync with onDraw engine event.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="timeaction">TimeAction<a class="headerlink" href="#timeaction" title="Permanent link">&para;</a></h2>
+<p>TimeAction is a generic type of action that has the values <code>time</code> and <code>value</code>. Both values can range from 0 to 1. The <code>time</code> is always fixed by a pre-defined duration, but <code>value</code> is calculated by an ease function. <code>Value</code> can be controlled by both pre-defined functions and user-defined functions.</p>
+<p>Getting value and time from Action:</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-0-0_c++-panel role=tab><label for=tab-group-0-0_c++ class=code-tab-label data-lang=c++ id=tab-group-0-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-0-0_c++-panel aria-labelledby=tab-group-0-0_c++-label><div class=codehilite><pre><span></span><code><span class=kt>float</span> <span class=n>time</span> <span class=o>=</span> <span class=n>action</span><span class=p>.</span><span class=n>getTime</span><span class=p>();</span>
+<span class=kt>float</span> <span class=n>value</span> <span class=o>=</span> <span class=n>action</span><span class=p>.</span><span class=n>getValue</span><span class=p>();</span>
+</code></pre></div></div><input name=tab-group-0 type=radio id=tab-group-0-1_lua class=code-tab data-lang=lua aria-controls=tab-group-0-1_lua-panel role=tab><label for=tab-group-0-1_lua class=code-tab-label data-lang=lua id=tab-group-0-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-0-1_lua-panel aria-labelledby=tab-group-0-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>time</span> <span class=o>=</span> <span class=n>action</span><span class=p>:</span><span class=n>getTime</span><span class=p>()</span>
+<span class=n>value</span> <span class=o>=</span> <span class=n>action</span><span class=p>:</span><span class=n>getValue</span><span class=p>()</span>
+</code></pre></div></div></div>
+
+<p>Class default constructor:<br />
+<strong>TimeAction(float duration, bool loop)</strong></p>
+<p>Example how to use <strong>TimeAction</strong> that is activating on touch start and on every step triangle is moved:</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-1-0_c++-panel role=tab><label for=tab-group-1-0_c++ class=code-tab-label data-lang=c++ id=tab-group-1-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-1-0_c++-panel aria-labelledby=tab-group-1-0_c++-label><div class=codehilite><pre><span></span><code><span class=cp>#include</span> <span class=cpf>&quot;Supernova.h&quot;</span><span class=cp></span>
+
+<span class=cp>#include</span> <span class=cpf>&quot;Scene.h&quot;</span><span class=cp></span>
+<span class=cp>#include</span> <span class=cpf>&quot;Polygon.h&quot;</span><span class=cp></span>
+<span class=cp>#include</span> <span class=cpf>&quot;Camera.h&quot;</span><span class=cp></span>
+<span class=cp>#include</span> <span class=cpf>&quot;TimeAction.h&quot;</span><span class=cp></span>
+<span class=cp>#include</span> <span class=cpf>&quot;MoveAction.h&quot;</span><span class=cp></span>
+
+<span class=k>using</span> <span class=k>namespace</span> <span class=n>Supernova</span><span class=p>;</span>
+
+<span class=n>Polygon</span> <span class=n>triangle</span><span class=p>;</span>
+<span class=n>Scene</span> <span class=n>scene</span><span class=p>;</span>
+<span class=n>TimeAction</span><span class=o>*</span> <span class=n>action</span><span class=p>;</span>
+
+<span class=kt>void</span> <span class=nf>onActionOnStep</span><span class=p>(</span><span class=n>Object</span><span class=o>*</span> <span class=n>object</span><span class=p>);</span>
+<span class=kt>void</span> <span class=nf>onTouchStart</span><span class=p>(</span><span class=kt>float</span> <span class=n>x</span><span class=p>,</span> <span class=kt>float</span> <span class=n>y</span><span class=p>);</span>
+
+<span class=kt>void</span> <span class=nf>init</span><span class=p>(){</span>
+    <span class=n>Engine</span><span class=o>::</span><span class=n>setCanvasSize</span><span class=p>(</span><span class=mi>1000</span><span class=p>,</span> <span class=mi>480</span><span class=p>);</span>
+
+    <span class=n>triangle</span><span class=p>.</span><span class=n>addVertex</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>100</span><span class=p>,</span> <span class=mi>0</span><span class=p>));</span>
+    <span class=n>triangle</span><span class=p>.</span><span class=n>addVertex</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=o>-</span><span class=mi>50</span><span class=p>,</span> <span class=mi>50</span><span class=p>,</span> <span class=mi>0</span><span class=p>));</span>
+    <span class=n>triangle</span><span class=p>.</span><span class=n>addVertex</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>50</span><span class=p>,</span> <span class=mi>50</span><span class=p>,</span> <span class=mi>0</span><span class=p>));</span>
+
+    <span class=n>triangle</span><span class=p>.</span><span class=n>setPosition</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>300</span><span class=p>,</span> <span class=mi>300</span><span class=p>,</span> <span class=mi>0</span><span class=p>));</span>
+    <span class=n>triangle</span><span class=p>.</span><span class=n>setColor</span><span class=p>(</span><span class=mf>0.6</span><span class=p>,</span> <span class=mf>0.2</span><span class=p>,</span> <span class=mf>0.6</span><span class=p>,</span> <span class=mi>1</span><span class=p>);</span>
+
+    <span class=n>scene</span><span class=p>.</span><span class=n>addObject</span><span class=p>(</span><span class=o>&amp;</span><span class=n>triangle</span><span class=p>);</span>
+
+    <span class=n>action</span> <span class=o>=</span> <span class=k>new</span> <span class=n>TimeAction</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=nb>true</span><span class=p>);</span>
+
+    <span class=n>action</span><span class=o>-&gt;</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_LINEAR</span><span class=p>);</span>
+    <span class=n>triangle</span><span class=p>.</span><span class=n>addAction</span><span class=p>(</span><span class=n>action</span><span class=p>);</span>
+
+    <span class=n>action</span><span class=o>-&gt;</span><span class=n>onStep</span> <span class=o>=</span> <span class=n>onActionOnStep</span><span class=p>;</span>
+
+    <span class=n>Engine</span><span class=o>::</span><span class=n>setScene</span><span class=p>(</span><span class=o>&amp;</span><span class=n>scene</span><span class=p>);</span>
+    <span class=n>Engine</span><span class=o>::</span><span class=n>onTouchPress</span> <span class=o>=</span> <span class=n>onTouchPress</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=kt>void</span> <span class=nf>onActionOnStep</span><span class=p>(</span><span class=n>Object</span><span class=o>*</span> <span class=n>object</span><span class=p>){</span>
+    <span class=n>object</span><span class=o>-&gt;</span><span class=n>setPosition</span><span class=p>(</span><span class=mi>200</span> <span class=o>+</span> <span class=n>action</span><span class=o>-&gt;</span><span class=n>getValue</span><span class=p>()</span> <span class=o>*</span> <span class=mi>100</span><span class=p>,</span> <span class=mi>200</span><span class=p>);</span>
+<span class=p>}</span>
+
+<span class=kt>void</span> <span class=nf>onTouchStart</span><span class=p>(</span><span class=kt>float</span> <span class=n>x</span><span class=p>,</span> <span class=kt>float</span> <span class=n>y</span><span class=p>){</span>
+    <span class=k>if</span> <span class=p>(</span><span class=n>action</span><span class=o>-&gt;</span><span class=n>isRunning</span><span class=p>())</span>
+        <span class=n>action</span><span class=o>-&gt;</span><span class=n>pause</span><span class=p>();</span>
+    <span class=k>else</span>
+        <span class=n>action</span><span class=o>-&gt;</span><span class=n>run</span><span class=p>();</span>
+<span class=p>}</span>
+</code></pre></div></div><input name=tab-group-1 type=radio id=tab-group-1-1_lua class=code-tab data-lang=lua aria-controls=tab-group-1-1_lua-panel role=tab><label for=tab-group-1-1_lua class=code-tab-label data-lang=lua id=tab-group-1-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-1-1_lua-panel aria-labelledby=tab-group-1-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>Engine</span><span class=p>.</span><span class=n>setCanvasSize</span><span class=p>(</span><span class=mi>1000</span><span class=p>,</span><span class=mi>480</span><span class=p>)</span>
+
+<span class=n>scene</span> <span class=o>=</span> <span class=n>Scene</span><span class=p>()</span>
+<span class=n>triangle</span> <span class=o>=</span> <span class=n>Polygon</span><span class=p>()</span>
+
+<span class=n>triangle</span><span class=p>:</span><span class=n>addVertex</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>100</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+<span class=n>triangle</span><span class=p>:</span><span class=n>addVertex</span><span class=p>(</span><span class=o>-</span><span class=mi>50</span><span class=p>,</span> <span class=mi>50</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+<span class=n>triangle</span><span class=p>:</span><span class=n>addVertex</span><span class=p>(</span><span class=mi>50</span><span class=p>,</span> <span class=mi>50</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+
+<span class=n>triangle</span><span class=p>:</span><span class=n>setPosition</span><span class=p>(</span><span class=mi>300</span><span class=p>,</span><span class=mi>300</span><span class=p>,</span><span class=mi>0</span><span class=p>)</span>
+<span class=n>triangle</span><span class=p>:</span><span class=n>setColor</span><span class=p>(</span><span class=mf>0.6</span><span class=p>,</span> <span class=mf>0.2</span><span class=p>,</span> <span class=mf>0.6</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+
+<span class=n>scene</span><span class=p>:</span><span class=n>addObject</span><span class=p>(</span><span class=n>triangle</span><span class=p>)</span>
+
+<span class=n>action</span> <span class=o>=</span> <span class=n>TimeAction</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=kc>false</span><span class=p>)</span>
+
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>TimeAction</span><span class=p>.</span><span class=n>LINEAR</span><span class=p>)</span>
+<span class=n>triangle</span><span class=p>:</span><span class=n>addAction</span><span class=p>(</span><span class=n>action</span><span class=p>)</span>
+
+<span class=n>Engine</span><span class=p>.</span><span class=n>setScene</span><span class=p>(</span><span class=n>scene</span><span class=p>)</span>
+
+<span class=kr>function</span> <span class=nf>onActionOnStep</span><span class=p>(</span><span class=n>object</span><span class=p>)</span>
+    <span class=n>object</span><span class=p>:</span><span class=n>setPosition2D</span><span class=p>(</span><span class=mi>200</span> <span class=o>+</span> <span class=n>action</span><span class=p>:</span><span class=n>getValue</span><span class=p>()</span> <span class=o>*</span> <span class=mi>100</span><span class=p>,</span> <span class=mi>200</span><span class=p>);</span>
+<span class=kr>end</span>
+<span class=n>action</span><span class=p>.</span><span class=n>onStep</span> <span class=o>=</span> <span class=n>onActionOnStep</span>
+
+<span class=kr>function</span> <span class=nf>onTouchStart</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>)</span>
+    <span class=kr>if</span> <span class=p>(</span><span class=n>action</span><span class=p>:</span><span class=n>isRunning</span><span class=p>())</span> <span class=kr>then</span>
+        <span class=n>action</span><span class=p>:</span><span class=n>pause</span><span class=p>()</span>
+    <span class=kr>else</span>
+        <span class=n>action</span><span class=p>:</span><span class=n>run</span><span class=p>()</span>
+    <span class=kr>end</span>
+<span class=kr>end</span>
+<span class=n>Engine</span><span class=p>.</span><span class=n>onTouchPress</span> <span class=o>=</span> <span class=n>onTouchPress</span>
+</code></pre></div></div></div>
+
+<p>Similar to the previous example, the same function can be used with <strong>MoveAction</strong> instead of <strong>TimeAction</strong>. This time it is no longer necessary to use <code>onStep()</code>:</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-2-0_c++-panel role=tab><label for=tab-group-2-0_c++ class=code-tab-label data-lang=c++ id=tab-group-2-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-2-0_c++-panel aria-labelledby=tab-group-2-0_c++-label><div class=codehilite><pre><span></span><code><span class=cp>#include</span> <span class=cpf>&quot;Supernova.h&quot;</span><span class=cp></span>
+
+<span class=cp>#include</span> <span class=cpf>&quot;Scene.h&quot;</span><span class=cp></span>
+<span class=cp>#include</span> <span class=cpf>&quot;Polygon.h&quot;</span><span class=cp></span>
+<span class=cp>#include</span> <span class=cpf>&quot;Camera.h&quot;</span><span class=cp></span>
+<span class=cp>#include</span> <span class=cpf>&quot;MoveAction.h&quot;</span><span class=cp></span>
+
+<span class=k>using</span> <span class=k>namespace</span> <span class=n>Supernova</span><span class=p>;</span>
+
+<span class=n>Polygon</span> <span class=n>triangle</span><span class=p>;</span>
+<span class=n>Scene</span> <span class=n>scene</span><span class=p>;</span>
+<span class=n>MoveAction</span><span class=o>*</span> <span class=n>action</span><span class=p>;</span>
+
+<span class=kt>void</span> <span class=nf>onTouchStart</span><span class=p>(</span><span class=kt>float</span> <span class=n>x</span><span class=p>,</span> <span class=kt>float</span> <span class=n>y</span><span class=p>);</span>
+
+<span class=kt>void</span> <span class=nf>init</span><span class=p>(){</span>
+    <span class=n>Engine</span><span class=o>::</span><span class=n>setCanvasSize</span><span class=p>(</span><span class=mi>1000</span><span class=p>,</span> <span class=mi>480</span><span class=p>);</span>
+
+    <span class=n>triangle</span><span class=p>.</span><span class=n>addVertex</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>100</span><span class=p>,</span> <span class=mi>0</span><span class=p>));</span>
+    <span class=n>triangle</span><span class=p>.</span><span class=n>addVertex</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=o>-</span><span class=mi>50</span><span class=p>,</span> <span class=mi>50</span><span class=p>,</span> <span class=mi>0</span><span class=p>));</span>
+    <span class=n>triangle</span><span class=p>.</span><span class=n>addVertex</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>50</span><span class=p>,</span> <span class=mi>50</span><span class=p>,</span> <span class=mi>0</span><span class=p>));</span>
+
+    <span class=n>triangle</span><span class=p>.</span><span class=n>setPosition</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>300</span><span class=p>,</span> <span class=mi>300</span><span class=p>,</span> <span class=mi>0</span><span class=p>));</span>
+    <span class=n>triangle</span><span class=p>.</span><span class=n>setColor</span><span class=p>(</span><span class=mf>0.6</span><span class=p>,</span> <span class=mf>0.2</span><span class=p>,</span> <span class=mf>0.6</span><span class=p>,</span> <span class=mi>1</span><span class=p>);</span>
+
+    <span class=n>scene</span><span class=p>.</span><span class=n>addObject</span><span class=p>(</span><span class=o>&amp;</span><span class=n>triangle</span><span class=p>);</span>
+
+    <span class=n>action</span> <span class=o>=</span> <span class=k>new</span> <span class=n>MoveAction</span><span class=p>(</span><span class=n>triangle</span><span class=p>.</span><span class=n>getPosition</span><span class=p>(),</span> <span class=n>Vector3</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=mi>10</span><span class=p>,</span><span class=mi>0</span><span class=p>),</span> <span class=mi>2</span><span class=p>,</span> <span class=nb>true</span><span class=p>);</span>
+
+    <span class=n>action</span><span class=o>-&gt;</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_LINEAR</span><span class=p>);</span>
+    <span class=n>triangle</span><span class=p>.</span><span class=n>addAction</span><span class=p>(</span><span class=n>action</span><span class=p>);</span>
+    <span class=n>action</span><span class=o>-&gt;</span><span class=n>run</span><span class=p>();</span>
+
+    <span class=n>Engine</span><span class=o>::</span><span class=n>setScene</span><span class=p>(</span><span class=o>&amp;</span><span class=n>scene</span><span class=p>);</span>
+    <span class=n>Engine</span><span class=o>::</span><span class=n>onTouchPress</span> <span class=o>=</span> <span class=n>onTouchPress</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=kt>void</span> <span class=nf>onTouchStart</span><span class=p>(</span><span class=kt>float</span> <span class=n>x</span><span class=p>,</span> <span class=kt>float</span> <span class=n>y</span><span class=p>){</span>
+    <span class=k>if</span> <span class=p>(</span><span class=n>action</span><span class=o>-&gt;</span><span class=n>isRunning</span><span class=p>())</span>
+        <span class=n>action</span><span class=o>-&gt;</span><span class=n>pause</span><span class=p>();</span>
+    <span class=k>else</span>
+        <span class=n>action</span><span class=o>-&gt;</span><span class=n>run</span><span class=p>();</span>
+<span class=p>}</span>
+</code></pre></div></div><input name=tab-group-2 type=radio id=tab-group-2-1_lua class=code-tab data-lang=lua aria-controls=tab-group-2-1_lua-panel role=tab><label for=tab-group-2-1_lua class=code-tab-label data-lang=lua id=tab-group-2-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-2-1_lua-panel aria-labelledby=tab-group-2-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>Engine</span><span class=p>.</span><span class=n>setCanvasSize</span><span class=p>(</span><span class=mi>1000</span><span class=p>,</span><span class=mi>480</span><span class=p>)</span>
+
+<span class=n>scene</span> <span class=o>=</span> <span class=n>Scene</span><span class=p>()</span>
+<span class=n>triangle</span> <span class=o>=</span> <span class=n>Polygon</span><span class=p>()</span>
+
+<span class=n>triangle</span><span class=p>:</span><span class=n>addVertex</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=o>-</span><span class=mi>100</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+<span class=n>triangle</span><span class=p>:</span><span class=n>addVertex</span><span class=p>(</span><span class=o>-</span><span class=mi>50</span><span class=p>,</span> <span class=mi>50</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+<span class=n>triangle</span><span class=p>:</span><span class=n>addVertex</span><span class=p>(</span><span class=mi>50</span><span class=p>,</span> <span class=mi>50</span><span class=p>,</span> <span class=mi>0</span><span class=p>)</span>
+
+<span class=n>triangle</span><span class=p>:</span><span class=n>setPosition</span><span class=p>(</span><span class=mi>300</span><span class=p>,</span><span class=mi>300</span><span class=p>,</span><span class=mi>0</span><span class=p>)</span>
+<span class=n>triangle</span><span class=p>:</span><span class=n>setColor</span><span class=p>(</span><span class=mf>0.6</span><span class=p>,</span> <span class=mf>0.2</span><span class=p>,</span> <span class=mf>0.6</span><span class=p>,</span> <span class=mi>1</span><span class=p>)</span>
+
+<span class=n>scene</span><span class=p>:</span><span class=n>addObject</span><span class=p>(</span><span class=n>triangle</span><span class=p>)</span>
+
+<span class=n>action</span> <span class=o>=</span> <span class=n>MoveAction</span><span class=p>(</span><span class=n>triangle</span><span class=p>.</span><span class=n>position</span><span class=p>,</span> <span class=n>Vector3</span><span class=p>(</span><span class=mi>500</span><span class=p>,</span><span class=mi>700</span><span class=p>,</span><span class=mi>0</span><span class=p>),</span> <span class=mi>2</span><span class=p>,</span> <span class=kc>true</span><span class=p>)</span>
+
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_ELASTIC_IN_OUT</span><span class=p>)</span>
+<span class=n>triangle</span><span class=p>:</span><span class=n>addAction</span><span class=p>(</span><span class=n>action</span><span class=p>)</span>
+<span class=n>action</span><span class=p>:</span><span class=n>run</span><span class=p>()</span>
+
+<span class=n>Engine</span><span class=p>.</span><span class=n>setScene</span><span class=p>(</span><span class=n>scene</span><span class=p>)</span>
+
+<span class=kr>function</span> <span class=nf>onTouchStart</span><span class=p>(</span><span class=n>x</span><span class=p>,</span> <span class=n>y</span><span class=p>)</span>
+    <span class=kr>if</span> <span class=p>(</span><span class=n>action</span><span class=p>:</span><span class=n>isRunning</span><span class=p>())</span> <span class=kr>then</span>
+        <span class=n>action</span><span class=p>:</span><span class=n>pause</span><span class=p>()</span>
+    <span class=kr>else</span>
+        <span class=n>action</span><span class=p>:</span><span class=n>run</span><span class=p>()</span>
+    <span class=kr>end</span>
+<span class=kr>end</span>
+<span class=n>Engine</span><span class=p>.</span><span class=n>onTouchPress</span> <span class=o>=</span> <span class=n>onTouchPress</span><span class=p>;</span>
+</code></pre></div></div></div>
+
+<h3 id="pre-defined-ease-functions">Pre-defined ease functions<a class="headerlink" href="#pre-defined-ease-functions" title="Permanent link">&para;</a></h3>
+<h4 id="linear">Linear<a class="headerlink" href="#linear" title="Permanent link">&para;</a></h4>
+<p><img alt="Linear" src="../../images/ease/linear.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-3-0_c++-panel role=tab><label for=tab-group-3-0_c++ class=code-tab-label data-lang=c++ id=tab-group-3-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-3-0_c++-panel aria-labelledby=tab-group-3-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_LINEAR</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-3 type=radio id=tab-group-3-1_lua class=code-tab data-lang=lua aria-controls=tab-group-3-1_lua-panel role=tab><label for=tab-group-3-1_lua class=code-tab-label data-lang=lua id=tab-group-3-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-3-1_lua-panel aria-labelledby=tab-group-3-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>TimeAction</span><span class=p>.</span><span class=n>LINEAR</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="quad">Quad<a class="headerlink" href="#quad" title="Permanent link">&para;</a></h4>
+<p><img alt="Quad" src="../../images/ease/easeQuad.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-4-0_c++-panel role=tab><label for=tab-group-4-0_c++ class=code-tab-label data-lang=c++ id=tab-group-4-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-4-0_c++-panel aria-labelledby=tab-group-4-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_QUAD_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_QUAD_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_QUAD_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-4 type=radio id=tab-group-4-1_lua class=code-tab data-lang=lua aria-controls=tab-group-4-1_lua-panel role=tab><label for=tab-group-4-1_lua class=code-tab-label data-lang=lua id=tab-group-4-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-4-1_lua-panel aria-labelledby=tab-group-4-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_QUAD_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_QUAD_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_QUAD_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="cubic">Cubic<a class="headerlink" href="#cubic" title="Permanent link">&para;</a></h4>
+<p><img alt="Cubic" src="../../images/ease/easeCubic.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-5-0_c++-panel role=tab><label for=tab-group-5-0_c++ class=code-tab-label data-lang=c++ id=tab-group-5-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-5-0_c++-panel aria-labelledby=tab-group-5-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_CUBIC_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_CUBIC_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_CUBIC_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-5 type=radio id=tab-group-5-1_lua class=code-tab data-lang=lua aria-controls=tab-group-5-1_lua-panel role=tab><label for=tab-group-5-1_lua class=code-tab-label data-lang=lua id=tab-group-5-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-5-1_lua-panel aria-labelledby=tab-group-5-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_CUBIC_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_CUBIC_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_CUBIC_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="quart">Quart<a class="headerlink" href="#quart" title="Permanent link">&para;</a></h4>
+<p><img alt="Quart" src="../../images/ease/easeQuart.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-6><input name=tab-group-6 type=radio id=tab-group-6-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-6-0_c++-panel role=tab><label for=tab-group-6-0_c++ class=code-tab-label data-lang=c++ id=tab-group-6-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-6-0_c++-panel aria-labelledby=tab-group-6-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_QUART_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_QUART_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_QUART_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-6 type=radio id=tab-group-6-1_lua class=code-tab data-lang=lua aria-controls=tab-group-6-1_lua-panel role=tab><label for=tab-group-6-1_lua class=code-tab-label data-lang=lua id=tab-group-6-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-6-1_lua-panel aria-labelledby=tab-group-6-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_QUART_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_QUART_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_QUART_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="quint">Quint<a class="headerlink" href="#quint" title="Permanent link">&para;</a></h4>
+<p><img alt="Quint" src="../../images/ease/easeQuint.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-7><input name=tab-group-7 type=radio id=tab-group-7-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-7-0_c++-panel role=tab><label for=tab-group-7-0_c++ class=code-tab-label data-lang=c++ id=tab-group-7-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-7-0_c++-panel aria-labelledby=tab-group-7-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_QUINT_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_QUINT_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_QUINT_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-7 type=radio id=tab-group-7-1_lua class=code-tab data-lang=lua aria-controls=tab-group-7-1_lua-panel role=tab><label for=tab-group-7-1_lua class=code-tab-label data-lang=lua id=tab-group-7-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-7-1_lua-panel aria-labelledby=tab-group-7-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_QUINT_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_QUINT_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_QUINT_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="sine">Sine<a class="headerlink" href="#sine" title="Permanent link">&para;</a></h4>
+<p><img alt="Sine" src="../../images/ease/easeSine.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-8><input name=tab-group-8 type=radio id=tab-group-8-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-8-0_c++-panel role=tab><label for=tab-group-8-0_c++ class=code-tab-label data-lang=c++ id=tab-group-8-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-8-0_c++-panel aria-labelledby=tab-group-8-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_SINE_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_SINE_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_SINE_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-8 type=radio id=tab-group-8-1_lua class=code-tab data-lang=lua aria-controls=tab-group-8-1_lua-panel role=tab><label for=tab-group-8-1_lua class=code-tab-label data-lang=lua id=tab-group-8-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-8-1_lua-panel aria-labelledby=tab-group-8-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_SINE_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_SINE_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_SINE_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="expo">Expo<a class="headerlink" href="#expo" title="Permanent link">&para;</a></h4>
+<p><img alt="Expo" src="../../images/ease/easeExpo.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-9><input name=tab-group-9 type=radio id=tab-group-9-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-9-0_c++-panel role=tab><label for=tab-group-9-0_c++ class=code-tab-label data-lang=c++ id=tab-group-9-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-9-0_c++-panel aria-labelledby=tab-group-9-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_EXPO_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_EXPO_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_EXPO_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-9 type=radio id=tab-group-9-1_lua class=code-tab data-lang=lua aria-controls=tab-group-9-1_lua-panel role=tab><label for=tab-group-9-1_lua class=code-tab-label data-lang=lua id=tab-group-9-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-9-1_lua-panel aria-labelledby=tab-group-9-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_EXPO_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_EXPO_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_EXPO_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="circ">Circ<a class="headerlink" href="#circ" title="Permanent link">&para;</a></h4>
+<p><img alt="Circ" src="../../images/ease/easeCirc.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-10><input name=tab-group-10 type=radio id=tab-group-10-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-10-0_c++-panel role=tab><label for=tab-group-10-0_c++ class=code-tab-label data-lang=c++ id=tab-group-10-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-10-0_c++-panel aria-labelledby=tab-group-10-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_CIRC_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_CIRC_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_CIRC_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-10 type=radio id=tab-group-10-1_lua class=code-tab data-lang=lua aria-controls=tab-group-10-1_lua-panel role=tab><label for=tab-group-10-1_lua class=code-tab-label data-lang=lua id=tab-group-10-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-10-1_lua-panel aria-labelledby=tab-group-10-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_CIRC_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_CIRC_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_CIRC_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="elastic">Elastic<a class="headerlink" href="#elastic" title="Permanent link">&para;</a></h4>
+<p><img alt="Elastic" src="../../images/ease/easeElastic.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-11><input name=tab-group-11 type=radio id=tab-group-11-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-11-0_c++-panel role=tab><label for=tab-group-11-0_c++ class=code-tab-label data-lang=c++ id=tab-group-11-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-11-0_c++-panel aria-labelledby=tab-group-11-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_ELASTIC_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_ELASTIC_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_ELASTIC_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-11 type=radio id=tab-group-11-1_lua class=code-tab data-lang=lua aria-controls=tab-group-11-1_lua-panel role=tab><label for=tab-group-11-1_lua class=code-tab-label data-lang=lua id=tab-group-11-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-11-1_lua-panel aria-labelledby=tab-group-11-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_ELASTIC_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_ELASTIC_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_ELASTIC_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="back">Back<a class="headerlink" href="#back" title="Permanent link">&para;</a></h4>
+<p><img alt="Back" src="../../images/ease/easeBack.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-12><input name=tab-group-12 type=radio id=tab-group-12-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-12-0_c++-panel role=tab><label for=tab-group-12-0_c++ class=code-tab-label data-lang=c++ id=tab-group-12-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-12-0_c++-panel aria-labelledby=tab-group-12-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_BACK_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_BACK_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_BACK_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-12 type=radio id=tab-group-12-1_lua class=code-tab data-lang=lua aria-controls=tab-group-12-1_lua-panel role=tab><label for=tab-group-12-1_lua class=code-tab-label data-lang=lua id=tab-group-12-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-12-1_lua-panel aria-labelledby=tab-group-12-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_BACK_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_BACK_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_BACK_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h4 id="bounce">Bounce<a class="headerlink" href="#bounce" title="Permanent link">&para;</a></h4>
+<p><img alt="Bounce" src="../../images/ease/easeBounce.png" /></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-13><input name=tab-group-13 type=radio id=tab-group-13-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-13-0_c++-panel role=tab><label for=tab-group-13-0_c++ class=code-tab-label data-lang=c++ id=tab-group-13-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-13-0_c++-panel aria-labelledby=tab-group-13-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_BOUNCE_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_BOUNCE_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>.</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>S_EASE_BOUNCE_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-13 type=radio id=tab-group-13-1_lua class=code-tab data-lang=lua aria-controls=tab-group-13-1_lua-panel role=tab><label for=tab-group-13-1_lua class=code-tab-label data-lang=lua id=tab-group-13-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-13-1_lua-panel aria-labelledby=tab-group-13-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_BOUNCE_IN</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_BOUNCE_OUT</span><span class=p>);</span>
+<span class=n>action</span><span class=p>:</span><span class=n>setFunctionType</span><span class=p>(</span><span class=n>Action</span><span class=p>.</span><span class=n>EASE_BOUNCE_IN_OUT</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h3 id="user-defined-ease-functions">User-defined ease functions<a class="headerlink" href="#user-defined-ease-functions" title="Permanent link">&para;</a></h3>
+<p>It's also possible to create new functions and attach it to a TimeAction.</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-14><input name=tab-group-14 type=radio id=tab-group-14-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-14-0_c++-panel role=tab><label for=tab-group-14-0_c++ class=code-tab-label data-lang=c++ id=tab-group-14-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-14-0_c++-panel aria-labelledby=tab-group-14-0_c++-label><div class=codehilite><pre><span></span><code><span class=kt>float</span> <span class=nf>newFunction</span><span class=p>(</span><span class=kt>float</span> <span class=n>time</span><span class=p>){</span>
+    <span class=k>return</span> <span class=n>time</span> <span class=o>*</span> <span class=mi>2</span><span class=p>;</span>
+<span class=p>}</span>
+
+<span class=n>action</span><span class=p>.</span><span class=n>setFunction</span><span class=p>(</span><span class=n>newFunction</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-14 type=radio id=tab-group-14-1_lua class=code-tab data-lang=lua aria-controls=tab-group-14-1_lua-panel role=tab><label for=tab-group-14-1_lua class=code-tab-label data-lang=lua id=tab-group-14-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-14-1_lua-panel aria-labelledby=tab-group-14-1_lua-label><div class=codehilite><pre><span></span><code><span class=kr>function</span> <span class=nf>newFunction</span><span class=p>(</span><span class=n>time</span><span class=p>)</span>
+    <span class=kr>return</span> <span class=n>time</span> <span class=o>*</span> <span class=mi>2</span>
+<span class=kr>end</span>
+
+<span class=n>action</span><span class=p>:</span><span class=n>setFunction</span><span class=p>(</span><span class=n>newFunction</span><span class=p>);</span>
+</code></pre></div></div></div>
+
+<h2 id="moveaction">MoveAction<a class="headerlink" href="#moveaction" title="Permanent link">&para;</a></h2>
+<p>Is used to generate a movement in objects.</p>
+<p>Class default constructor:<br />
+<strong>MoveAction(Vector3 startPosition, Vector3 endPosition, float duration, bool loop=false)</strong></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-15><input name=tab-group-15 type=radio id=tab-group-15-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-15-0_c++-panel role=tab><label for=tab-group-15-0_c++ class=code-tab-label data-lang=c++ id=tab-group-15-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-15-0_c++-panel aria-labelledby=tab-group-15-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span> <span class=o>=</span> <span class=k>new</span> <span class=n>MoveAction</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>100</span><span class=p>,</span><span class=mi>200</span><span class=p>,</span><span class=mi>0</span><span class=p>),</span> <span class=n>Vector3</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=mi>10</span><span class=p>,</span><span class=mi>0</span><span class=p>),</span> <span class=mi>2</span><span class=p>,</span> <span class=nb>false</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-15 type=radio id=tab-group-15-1_lua class=code-tab data-lang=lua aria-controls=tab-group-15-1_lua-panel role=tab><label for=tab-group-15-1_lua class=code-tab-label data-lang=lua id=tab-group-15-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-15-1_lua-panel aria-labelledby=tab-group-15-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span> <span class=o>=</span> <span class=n>MoveAction</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>100</span><span class=p>,</span><span class=mi>200</span><span class=p>,</span><span class=mi>0</span><span class=p>),</span> <span class=n>Vector3</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=mi>10</span><span class=p>,</span><span class=mi>0</span><span class=p>),</span> <span class=mi>2</span><span class=p>,</span> <span class=kc>true</span><span class=p>)</span>
+</code></pre></div></div></div>
+
+<h2 id="rotateaction">RotateAction<a class="headerlink" href="#rotateaction" title="Permanent link">&para;</a></h2>
+<p>Is used to generate rotation in objects. Rotations are made by quaternions, but you can easily a create quaternions with angles.</p>
+<p>Class default constructor:<br />
+<strong>RotateAction(Quaternion startRotation, Quaternion endRotation, float duration, bool loop=false)</strong></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-16><input name=tab-group-16 type=radio id=tab-group-16-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-16-0_c++-panel role=tab><label for=tab-group-16-0_c++ class=code-tab-label data-lang=c++ id=tab-group-16-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-16-0_c++-panel aria-labelledby=tab-group-16-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>Quaternion</span> <span class=n>fromAngle</span><span class=p>;</span>
+<span class=n>fromAngle</span><span class=p>.</span><span class=n>fromAngle</span><span class=p>(</span><span class=mi>20</span><span class=p>);</span>
+
+<span class=n>Quaternion</span> <span class=n>toAngle</span><span class=p>;</span>
+<span class=n>toAngle</span><span class=p>.</span><span class=n>fromAngle</span><span class=p>(</span><span class=mi>80</span><span class=p>);</span>
+
+<span class=n>action</span> <span class=o>=</span> <span class=k>new</span> <span class=n>RotateAction</span><span class=p>(</span><span class=n>fromAngle</span><span class=p>,</span> <span class=n>toAngle</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=nb>true</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-16 type=radio id=tab-group-16-1_lua class=code-tab data-lang=lua aria-controls=tab-group-16-1_lua-panel role=tab><label for=tab-group-16-1_lua class=code-tab-label data-lang=lua id=tab-group-16-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-16-1_lua-panel aria-labelledby=tab-group-16-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>fromAngle</span> <span class=o>=</span> <span class=n>Quaternion</span><span class=p>()</span>
+<span class=n>fromAngle</span><span class=p>:</span><span class=n>fromAngle</span><span class=p>(</span><span class=mi>20</span><span class=p>)</span>
+
+<span class=n>toAngle</span> <span class=o>=</span> <span class=n>Quaternion</span><span class=p>()</span>
+<span class=n>toAngle</span><span class=p>:</span><span class=n>fromAngle</span><span class=p>(</span><span class=mi>80</span><span class=p>)</span>
+
+<span class=n>action</span> <span class=o>=</span> <span class=n>RotateAction</span><span class=p>(</span><span class=n>fromAngle</span><span class=p>,</span> <span class=n>toAngle</span><span class=p>,</span> <span class=mi>2</span><span class=p>,</span> <span class=kc>true</span><span class=p>)</span>
+</code></pre></div></div></div>
+
+<p>For default, a Quaternion method fromAngleAxis uses axis Z (for 2D projects) to perform a rotation, but it`s also possible to make rotations for any axis:</p>
+<div class=md-fenced-code-tabs id=tab-tab-group-17><input name=tab-group-17 type=radio id=tab-group-17-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-17-0_c++-panel role=tab><label for=tab-group-17-0_c++ class=code-tab-label data-lang=c++ id=tab-group-17-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-17-0_c++-panel aria-labelledby=tab-group-17-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>fromAngle</span><span class=p>.</span><span class=n>fromAngleAxis</span><span class=p>(</span><span class=mi>20</span><span class=p>,</span> <span class=n>Vector3</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>));</span>
+</code></pre></div></div><input name=tab-group-17 type=radio id=tab-group-17-1_lua class=code-tab data-lang=lua aria-controls=tab-group-17-1_lua-panel role=tab><label for=tab-group-17-1_lua class=code-tab-label data-lang=lua id=tab-group-17-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-17-1_lua-panel aria-labelledby=tab-group-17-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>fromAngle</span><span class=p>:</span><span class=n>fromAngleAxis</span><span class=p>(</span><span class=mi>10</span><span class=p>,</span> <span class=n>Vector3</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>0</span><span class=p>))</span>
+</code></pre></div></div></div>
+
+<h2 id="scaleaction">ScaleAction<a class="headerlink" href="#scaleaction" title="Permanent link">&para;</a></h2>
+<p>Is used to change object scale. Scales are setting by Vector3. For example, if you want increase the object 3 times from Y axis you can use <code>Vector3(1, 3, 1)</code>.</p>
+<p>Class default constructor:<br />
+<strong>ScaleAction(Vector3 startScale, Vector3 endScalel, float duration, bool loop=false)</strong></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-18><input name=tab-group-18 type=radio id=tab-group-18-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-18-0_c++-panel role=tab><label for=tab-group-18-0_c++ class=code-tab-label data-lang=c++ id=tab-group-18-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-18-0_c++-panel aria-labelledby=tab-group-18-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ScaleAction</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>1</span><span class=p>),</span> <span class=n>Vector3</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>10</span><span class=p>,</span><span class=mi>1</span><span class=p>),</span> <span class=mi>2</span><span class=p>,</span> <span class=nb>true</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-18 type=radio id=tab-group-18-1_lua class=code-tab data-lang=lua aria-controls=tab-group-18-1_lua-panel role=tab><label for=tab-group-18-1_lua class=code-tab-label data-lang=lua id=tab-group-18-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-18-1_lua-panel aria-labelledby=tab-group-18-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span> <span class=o>=</span> <span class=n>ScaleAction</span><span class=p>(</span><span class=n>Vector3</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>1</span><span class=p>,</span><span class=mi>1</span><span class=p>),</span> <span class=n>Vector3</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=mi>10</span><span class=p>,</span><span class=mi>1</span><span class=p>),</span> <span class=mi>2</span><span class=p>,</span> <span class=kc>true</span><span class=p>)</span>
+</code></pre></div></div></div>
+
+<h2 id="coloraction">ColorAction<a class="headerlink" href="#coloraction" title="Permanent link">&para;</a></h2>
+<p>Is used to change the color of object.</p>
+<p>Class default constructor:<br />
+<strong>ColorAction(float startRed, float startGreen, float startBlue, float endRed, float endGreen, float endBlue, float duration, bool loop=false)</strong></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-19><input name=tab-group-19 type=radio id=tab-group-19-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-19-0_c++-panel role=tab><label for=tab-group-19-0_c++ class=code-tab-label data-lang=c++ id=tab-group-19-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-19-0_c++-panel aria-labelledby=tab-group-19-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span> <span class=o>=</span> <span class=k>new</span> <span class=n>ColorAction</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mf>0.5</span><span class=p>,</span> <span class=mf>0.8</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mf>0.4</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=nb>true</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-19 type=radio id=tab-group-19-1_lua class=code-tab data-lang=lua aria-controls=tab-group-19-1_lua-panel role=tab><label for=tab-group-19-1_lua class=code-tab-label data-lang=lua id=tab-group-19-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-19-1_lua-panel aria-labelledby=tab-group-19-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span> <span class=o>=</span> <span class=n>ColorAction</span><span class=p>(</span><span class=mi>0</span><span class=p>,</span> <span class=mf>0.5</span><span class=p>,</span> <span class=mf>0.8</span><span class=p>,</span> <span class=mi>1</span><span class=p>,</span> <span class=mf>0.4</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=kc>true</span><span class=p>)</span>
+</code></pre></div></div></div>
+
+<h2 id="alphaaction">AlphaAction<a class="headerlink" href="#alphaaction" title="Permanent link">&para;</a></h2>
+<p>Is used to change alpha factor of object. Alpha 1.0 é full opaque object and alpha 0.0 is full transparent object.</p>
+<p>Class default constructor:<br />
+<strong>AlphaAction(float startAlpha, float endAlpha, float duration, bool loop=false)</strong></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-20><input name=tab-group-20 type=radio id=tab-group-20-0_c++ checked=checked class=code-tab data-lang=c++ aria-controls=tab-group-20-0_c++-panel role=tab><label for=tab-group-20-0_c++ class=code-tab-label data-lang=c++ id=tab-group-20-0_c++-label>C++</label><div class=code-tabpanel role=tabpanel data-lang=c++ id=tab-group-20-0_c++-panel aria-labelledby=tab-group-20-0_c++-label><div class=codehilite><pre><span></span><code><span class=n>action</span> <span class=o>=</span> <span class=k>new</span> <span class=n>AlphaAction</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=nb>true</span><span class=p>);</span>
+</code></pre></div></div><input name=tab-group-20 type=radio id=tab-group-20-1_lua class=code-tab data-lang=lua aria-controls=tab-group-20-1_lua-panel role=tab><label for=tab-group-20-1_lua class=code-tab-label data-lang=lua id=tab-group-20-1_lua-label>Lua</label><div class=code-tabpanel role=tabpanel data-lang=lua id=tab-group-20-1_lua-panel aria-labelledby=tab-group-20-1_lua-label><div class=codehilite><pre><span></span><code><span class=n>action</span> <span class=o>=</span> <span class=n>AlphaAction</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>0</span><span class=p>,</span> <span class=mi>5</span><span class=p>,</span> <span class=kc>true</span><span class=p>)</span>
+</code></pre></div></div></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../screen-scaling/" title="Screen scaling" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Screen scaling
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../particle-system/" title="Particle system" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Particle system
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018, Eduardo Dória Lima (CC-BY 3.0)
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/deslon/supernova" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.7a2ea5ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="../../js/code-tabs.js"></script>
+      
+    
+  </body>
+</html>
