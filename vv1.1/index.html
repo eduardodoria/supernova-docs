@@ -11,21 +11,21 @@
         <meta name="description" content="Supernova Engine documentation">
       
       
-        <link rel="canonical" href="http://docs.supernovaegine.org/getting-started/building-project/building-for-html5/">
+        <link rel="canonical" href="http://docs.supernovaegine.org/">
       
       
         <meta name="author" content="Eduardo Dória Lima">
       
-      <link rel="shortcut icon" href="../../../images/favicon.png">
+      <link rel="shortcut icon" href="images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.0">
     
     
       
-        <title>Building for HTML5 - Supernova</title>
+        <title>Supernova</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6e35a1a6.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.6e35a1a6.min.css">
       
       
     
@@ -39,9 +39,9 @@
     
     
     
-      <link rel="stylesheet" href="../../../css/extra.css">
+      <link rel="stylesheet" href="css/extra.css">
     
-      <link rel="stylesheet" href="../../../css/code-tabs.css">
+      <link rel="stylesheet" href="css/code-tabs.css">
     
     
       
@@ -63,20 +63,12 @@
     <div data-md-component="skip">
       
         
-        <a href="#work-for-all-platforms" class="md-skip">
+        <a href="#supernova-engine" class="md-skip">
           Skip to content
         </a>
       
     </div>
     <div data-md-component="announce">
-      
-        <aside class="md-announce">
-          <div class="md-announce__inner md-grid md-typeset">
-            
-This is not docs, only for testing. Go to website <a href="http://docs.supernovaengine.org">here</a>
-
-          </div>
-        </aside>
       
     </div>
     
@@ -84,7 +76,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="http://docs.supernovaegine.org" title="Supernova" class="md-header-nav__button md-logo" aria-label="Supernova">
       
-  <img src="../../../images/logo.svg" alt="logo">
+  <img src="images/logo.svg" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -98,7 +90,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Building for HTML5
+              Introduction
             
           </span>
         </div>
@@ -170,7 +162,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
   <label class="md-nav__title" for="__drawer">
     <a href="http://docs.supernovaegine.org" title="Supernova" class="md-nav__button md-logo" aria-label="Supernova">
       
-  <img src="../../../images/logo.svg" alt="logo">
+  <img src="images/logo.svg" alt="logo">
 
     </a>
     Supernova
@@ -195,11 +187,73 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../.." title="Introduction" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Introduction
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="." title="Introduction" class="md-nav__link md-nav__link--active">
       Introduction
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-supernova" class="md-nav__link">
+    Building Supernova
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning" class="md-nav__link">
+    Learning
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -207,12 +261,10 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
       Getting started
@@ -236,7 +288,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
 
 
   <li class="md-nav__item">
-    <a href="../../creating-a-basic-project/" title="Creating a basic project" class="md-nav__link">
+    <a href="getting-started/creating-a-basic-project/" title="Creating a basic project" class="md-nav__link">
       Creating a basic project
     </a>
   </li>
@@ -248,7 +300,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
 
 
   <li class="md-nav__item">
-    <a href="../../coordinate-systems/" title="Coordinate systems" class="md-nav__link">
+    <a href="getting-started/coordinate-systems/" title="Coordinate systems" class="md-nav__link">
       Coordinate systems
     </a>
   </li>
@@ -258,12 +310,10 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
     
     <label class="md-nav__link" for="nav-2-3">
       Building project
@@ -287,7 +337,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
 
 
   <li class="md-nav__item">
-    <a href="../building-for-android/" title="Building for Android" class="md-nav__link">
+    <a href="getting-started/building-project/building-for-android/" title="Building for Android" class="md-nav__link">
       Building for Android
     </a>
   </li>
@@ -299,7 +349,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
 
 
   <li class="md-nav__item">
-    <a href="../building-for-ios/" title="Building for iOS" class="md-nav__link">
+    <a href="getting-started/building-project/building-for-ios/" title="Building for iOS" class="md-nav__link">
       Building for iOS
     </a>
   </li>
@@ -309,123 +359,11 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Building for HTML5
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="Building for HTML5" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="getting-started/building-project/building-for-html5/" title="Building for HTML5" class="md-nav__link">
       Building for HTML5
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#work-for-all-platforms" class="md-nav__link">
-    Work for all platforms
-  </a>
-  
-    <nav class="md-nav" aria-label="Work for all platforms">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-clone-supernova-project" class="md-nav__link">
-    1. Clone Supernova project
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Clone Supernova project">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-linux-or-osx" class="md-nav__link">
-    For Linux or OSX:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-windows" class="md-nav__link">
-    For Windows:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-download-and-install-emscripten" class="md-nav__link">
-    2. Download and install Emscripten
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-compile-supernova" class="md-nav__link">
-    3. Compile Supernova
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Compile Supernova">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-linux-and-osx" class="md-nav__link">
-    For Linux and OSX:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-windows_1" class="md-nav__link">
-    For Windows:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#all-platforms" class="md-nav__link">
-    All platforms
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -470,7 +408,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
 
 
   <li class="md-nav__item">
-    <a href="../../../learning/screen-scaling/" title="Screen scaling" class="md-nav__link">
+    <a href="learning/screen-scaling/" title="Screen scaling" class="md-nav__link">
       Screen scaling
     </a>
   </li>
@@ -482,7 +420,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
 
 
   <li class="md-nav__item">
-    <a href="../../../learning/object-animation/" title="Object animation" class="md-nav__link">
+    <a href="learning/object-animation/" title="Object animation" class="md-nav__link">
       Object animation
     </a>
   </li>
@@ -494,7 +432,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
 
 
   <li class="md-nav__item">
-    <a href="../../../learning/particle-system/" title="Particle system" class="md-nav__link">
+    <a href="learning/particle-system/" title="Particle system" class="md-nav__link">
       Particle system
     </a>
   </li>
@@ -519,6 +457,8 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon">
@@ -529,31 +469,16 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#work-for-all-platforms" class="md-nav__link">
-    Work for all platforms
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
   </a>
   
-    <nav class="md-nav" aria-label="Work for all platforms">
+    <nav class="md-nav" aria-label="Getting started">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-clone-supernova-project" class="md-nav__link">
-    1. Clone Supernova project
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Clone Supernova project">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-linux-or-osx" class="md-nav__link">
-    For Linux or OSX:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-windows" class="md-nav__link">
-    For Windows:
+  <a href="#building-supernova" class="md-nav__link">
+    Building Supernova
   </a>
   
 </li>
@@ -562,50 +487,11 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-download-and-install-emscripten" class="md-nav__link">
-    2. Download and install Emscripten
+      
+        <li class="md-nav__item">
+  <a href="#learning" class="md-nav__link">
+    Learning
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-compile-supernova" class="md-nav__link">
-    3. Compile Supernova
-  </a>
-  
-    <nav class="md-nav" aria-label="3. Compile Supernova">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-linux-and-osx" class="md-nav__link">
-    For Linux and OSX:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#for-windows_1" class="md-nav__link">
-    For Windows:
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#all-platforms" class="md-nav__link">
-    All platforms
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -621,7 +507,7 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/deslon/supernova-docs/edit/master/docs/getting-started/building-project/building-for-html5.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/deslon/supernova-docs/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -629,43 +515,61 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
                   
                 
                 
-                  <h1>Building for HTML5</h1>
-                
-                <h2 id="work-for-all-platforms">Work for all platforms<a class="headerlink" href="#work-for-all-platforms" title="Permanent link">&para;</a></h2>
-<h3 id="1-clone-supernova-project">1. Clone Supernova project<a class="headerlink" href="#1-clone-supernova-project" title="Permanent link">&para;</a></h3>
-<h4 id="for-linux-or-osx">For Linux or OSX:<a class="headerlink" href="#for-linux-or-osx" title="Permanent link">&para;</a></h4>
-<p>Execute in terminal:</p>
-<p><code>git clone https://github.com/deslon/supernova.git</code></p>
-<h4 id="for-windows">For Windows:<a class="headerlink" href="#for-windows" title="Permanent link">&para;</a></h4>
-<p>On Github, navigate to the main page of the repository.</p>
-<p>Under your repository name, click <strong>Clone or download</strong>.</p>
-<h3 id="2-download-and-install-emscripten">2. Download and install Emscripten<a class="headerlink" href="#2-download-and-install-emscripten" title="Permanent link">&para;</a></h3>
-<p>Download from:</p>
-<p>https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html</p>
-<p>Follow instructions depending of your platform:</p>
-<p>https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html#installation-instructions</p>
-<p>For Linux and OSX you can do:</p>
-<p> <div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_r5hhf4nztgq077a checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_r5hhf4nztgq077a-panel role=tab><label for=tab-group-0-0_r5hhf4nztgq077a class=code-tab-label data-lang id=tab-group-0-0_r5hhf4nztgq077a-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_r5hhf4nztgq077a-panel aria-labelledby=tab-group-0-0_r5hhf4nztgq077a-label><div class=codehilite><pre><span></span><code><span class=p>.</span><span class=o>/</span><span class=n>emsdk</span> <span class=k>update</span>
+                <h1 id="supernova-engine">Supernova Engine<a class="headerlink" href="#supernova-engine" title="Permanent link">&para;</a></h1>
+<p>This is the official documentation and tutorials of Supernova. We are still in early development, so these documents can still be very incomplete.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Docs is under development.</strong></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Supernova is not yet ready for production.</strong></p>
+</div>
+<div style="display: flex">
+  <div style="flex: 1; margin: 0 1em 0 0">
+    <strong>Made for programmers</strong>
+    <p>Take a control of your game code. This is a game engine for real programmers.</p>
+  </div>
+  <div style="flex: 1">
+    <strong>Simple and Fast</strong>
+    <p>Supernova doesn't have unnecessary stuffs like heavy GUI and extra processing.</p>
+  </div>
+</div>
 
-<span class=p>.</span><span class=o>/</span><span class=n>emsdk</span> <span class=n>install</span> <span class=n>sdk</span><span class=o>-</span><span class=mi>1</span><span class=p>.</span><span class=mi>37</span><span class=p>.</span><span class=mi>19</span><span class=o>-</span><span class=mi>64</span><span class=nb>bit</span>
+<div style="display: flex">
+  <div style="flex: 1; margin: 0 1em 0 0">
+    <strong>Lua or C++</strong>
+    <p>You choose the best language is good for you. Lua and C++ can be used to make wonderful graphics and games.</p>
+  </div>
+  <div style="flex: 1">
+    <strong>Cross-platform</strong>
+    <p>Write the code once and use it in Android, iOS and HTML5. It runs native in each platform with OpenGL ES.</p>
+  </div>
+</div>
 
-<span class=p>.</span><span class=o>/</span><span class=n>emsdk</span> <span class=n>activate</span> <span class=n>sdk</span><span class=o>-</span><span class=mi>1</span><span class=p>.</span><span class=mi>37</span><span class=p>.</span><span class=mi>19</span><span class=o>-</span><span class=mi>64</span><span class=nb>bit</span>
-</code></pre></div></div></div></p>
-<p>For Windows, there is a simple installer.</p>
-<h3 id="3-compile-supernova">3. Compile Supernova<a class="headerlink" href="#3-compile-supernova" title="Permanent link">&para;</a></h3>
-<h4 id="for-linux-and-osx">For Linux and OSX:<a class="headerlink" href="#for-linux-and-osx" title="Permanent link">&para;</a></h4>
-<p>Add Emscripten root to a system environment variable:</p>
-<p><code>export $EMSCRIPTEN=&lt;path_to_emscripten&gt;</code></p>
-<h4 id="for-windows_1">For Windows:<a class="headerlink" href="#for-windows_1" title="Permanent link">&para;</a></h4>
-<p>Install MinGW: https://sourceforge.net/projects/mingw-w64/</p>
-<p>Note that MinGW must be in PATH environment variable of Windows. To test it, try to run <code>mingw32-make</code> in Prompt.</p>
-<p>Install CMake: https://cmake.org/download/</p>
-<p>During installation, choose to add to PATH. To test it, try to run <code>cmake</code> in Prompt.</p>
-<h4 id="all-platforms">All platforms<a class="headerlink" href="#all-platforms" title="Permanent link">&para;</a></h4>
-<p>The directory where you clone Supernova go to: <code>workspaces/emscripten/</code></p>
-<p>Execute in terminal:</p>
-<p><code>python build.py</code></p>
-<p>When finished you can see generated <strong>.js</strong> and <strong>.html</strong> files in <strong>build/</strong> folder. Open with any browser. </p>
+<div style="display: flex">
+  <div style="flex: 1; margin: 0 1em 0 0">
+    <strong>Sprites and animations</strong>
+    <p>A <a href="./learning/sprites/">sprite</a> object makes everything easy when working with <a href="./learning/object-animation/">animations</a>.</p>
+  </div>
+  <div style="flex: 1">
+    <strong>Dynamic shadows</strong>
+    <p>You can use many kind of <a href="./learning/lights/">lights</a> with support for dynamic shadows.</p>
+  </div>
+</div>
+
+<hr />
+<h3 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h3>
+<p><a href="getting-started/creating-a-basic-project">Creating a basic project</a><br />
+<a href="getting-started/coordinate-systems">Coordinate systems</a>  </p>
+<h4 id="building-supernova">Building Supernova<a class="headerlink" href="#building-supernova" title="Permanent link">&para;</a></h4>
+<p><a href="getting-started/building-project/building-for-android">Building for Android</a><br />
+<a href="getting-started/building-project/building-for-ios">Building for iOS</a><br />
+<a href="getting-started/building-project/building-for-html5">Building for HTML5 (Emscripten)</a></p>
+<h3 id="learning">Learning<a class="headerlink" href="#learning" title="Permanent link">&para;</a></h3>
+<p><a href="learning/screen-scaling">Screen scaling</a><br />
+<a href="learning/object-animation">Object animation</a> <br />
+<a href="learning/particle-system">Particle system</a>   </p>
                 
               
               
@@ -684,28 +588,14 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../building-for-ios/" title="Building for iOS" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-            </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Building for iOS
-              </div>
-            </div>
-          </a>
         
-        
-          <a href="../../../learning/screen-scaling/" title="Screen scaling" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="getting-started/creating-a-basic-project/" title="Creating a basic project" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Screen scaling
+                Creating a basic project
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -749,20 +639,20 @@ This is not docs, only for testing. Go to website <a href="http://docs.supernova
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
-          base: "../../..",
+          base: ".",
           features: [],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.7a2ea5ba.min.js"
+            worker: "assets/javascripts/worker/search.7a2ea5ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
       
-        <script src="../../../js/code-tabs.js"></script>
+        <script src="js/code-tabs.js"></script>
       
     
   </body>
