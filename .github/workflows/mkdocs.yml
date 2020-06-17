@@ -25,7 +25,7 @@ jobs:
     
     - name: Build MKDocs
       run: |
-        mkdocs build
+        python versioned-docs.py
     
     - name: Upload docs result
       uses: actions/upload-artifact@v1
