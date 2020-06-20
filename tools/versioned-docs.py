@@ -20,7 +20,7 @@ def build_command(site_dir, tags, default, latest):
 
     os.chdir('../')
 
-    g = Git()
+    g = Git('../')
     tags = tags or g.tag().splitlines()
 
     g.checkout(default)
