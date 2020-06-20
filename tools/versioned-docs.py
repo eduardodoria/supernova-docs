@@ -41,7 +41,7 @@ def build_command(site_dir, tags, default, latest):
         if latest != tag:
             if not os.path.exists("overrides"):
                 os.makedirs("overrides")
-                with open("main.html", "a") as file:
+                with open(os.path.join('overrides', 'main.html'), "a") as file:
                     file.write(old_version_block)
 
         tag_dir = os.path.join(site_dir, "{0}".format(tag))
