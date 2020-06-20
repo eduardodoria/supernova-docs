@@ -8,7 +8,7 @@ overrides_main = '{% extends "base.html" %}\n'
 
 old_version_block = (
     '{% block announce %}\n'
-    'This is not docs, only for testing. Go to website <a href="http://docs.supernovaengine.org">here</a>\n'
+    '<b>This is NOT the latest version. If you want to go to latest version click <a href="http://docs.supernovaengine.org">here</a></b>\n'
     '{% endblock %}\n'
     )
 
