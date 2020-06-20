@@ -4,10 +4,12 @@ import click
 import subprocess
 from git import Git
 
+overrides_main = '{% extends "base.html" %}\n'
+
 old_version_block = (
-    '{% block announce %}'
-    'This is not docs, only for testing. Go to website <a href="http://docs.supernovaengine.org">here</a>'
-    '{% endblock %}'
+    '{% block announce %}\n'
+    'This is not docs, only for testing. Go to website <a href="http://docs.supernovaengine.org">here</a>\n'
+    '{% endblock %}\n'
     )
 
 @click.command()
@@ -41,7 +43,15 @@ def build_command(site_dir, tags, default, latest):
         if latest != tag:
             if not os.path.exists("overrides"):
                 os.makedirs("overrides")
-                with open(os.path.join('overrides', 'main.html'), "a") as file:
+
+            mainhtmlpath = os.path.join('overrides', 'main.html')
+
+            if not os.path.exists(mainhtmlpath):
+                with open(mainhtmlpath, "w") as file:
+                    file.write(overrides_main)
+                    file.write(old_version_block)
+            else:
+                with open(mainhtmlpath, "a") as file:
                     file.write(old_version_block)
 
         tag_dir = os.path.join(site_dir, "{0}".format(tag))
