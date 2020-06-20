@@ -17,10 +17,8 @@ old_version_block = (
 @click.option('--latest', '-l', default='master')
 def build_command(site_dir, tags, default, latest):
     """Build the MkDocs documentation"""
-
-    os.chdir('../')
-
-    g = Git('..')
+    
+    g = Git()
     tags = tags or g.tag().splitlines()
 
     g.checkout(default)
