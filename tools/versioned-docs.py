@@ -44,7 +44,7 @@ def build_command(site_dir, tags, default, latest):
                 with open("main.html", "a") as file:
                     file.write(old_version_block)
 
-        tag_dir = os.path.join(site_dir, "v{0}".format(tag))
+        tag_dir = os.path.join(site_dir, "{0}".format(tag))
         print("Building %s to %s" % (tag, tag_dir), flush=True)
         subprocess.run(['mkdocs', 'build', '--site-dir', tag_dir, "--clean"]).check_returncode()
 
