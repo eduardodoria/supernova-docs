@@ -40,11 +40,11 @@ def build_command(site_dir, tags, default, latest):
             print("Unable to build %s, as no mkdocs.yml was found" % (tag), flush=True)
             continue
 
+        mainhtmlpath = os.path.join('overrides', 'main.html')
+
         if latest != tag:
             if not os.path.exists("overrides"):
                 os.makedirs("overrides")
-
-            mainhtmlpath = os.path.join('overrides', 'main.html')
 
             if not os.path.exists(mainhtmlpath):
                 with open(mainhtmlpath, "w") as file:
@@ -58,7 +58,7 @@ def build_command(site_dir, tags, default, latest):
         print("Building %s to %s" % (tag, tag_dir), flush=True)
         subprocess.run(['mkdocs', 'build', '--site-dir', tag_dir, "--clean"]).check_returncode()
 
-        g.checkout(os.path.join('overrides', 'main.html'))
+        g.checkout(mainhtmlpath)
 
     g.checkout('master')
 
