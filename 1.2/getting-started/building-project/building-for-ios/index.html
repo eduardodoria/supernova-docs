@@ -11,7 +11,7 @@
         <meta name="description" content="Supernova Engine documentation">
       
       
-        <link rel="canonical" href="http://docs.supernovaegine.org/getting-started/building-project/building-for-android/">
+        <link rel="canonical" href="http://docs.supernovaegine.org/getting-started/building-project/building-for-ios/">
       
       
         <meta name="author" content="Eduardo Dória Lima">
@@ -21,7 +21,7 @@
     
     
       
-        <title>Building for Android - Supernova</title>
+        <title>Building for iOS - Supernova</title>
       
     
     
@@ -63,12 +63,20 @@
     <div data-md-component="skip">
       
         
-        <a href="#work-for-all-platforms" class="md-skip">
+        <a href="#work-only-for-osx" class="md-skip">
           Skip to content
         </a>
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+This is not docs, only for testing. Go to website <a href="http://docs.supernovaengine.org">here</a>
+
+          </div>
+        </aside>
       
     </div>
     
@@ -90,7 +98,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Building for Android
+              Building for iOS
             
           </span>
         </div>
@@ -277,6 +285,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../building-for-android/" title="Building for Android" class="md-nav__link">
+      Building for Android
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -286,14 +306,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Building for Android
+        Building for iOS
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="Building for Android" class="md-nav__link md-nav__link--active">
-      Building for Android
+    <a href="./" title="Building for iOS" class="md-nav__link md-nav__link--active">
+      Building for iOS
     </a>
     
       
@@ -310,11 +330,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#work-for-all-platforms" class="md-nav__link">
-    Work for all platforms
+  <a href="#work-only-for-osx" class="md-nav__link">
+    Work only for OSX
   </a>
   
-    <nav class="md-nav" aria-label="Work for all platforms">
+    <nav class="md-nav" aria-label="Work only for OSX">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -322,31 +342,11 @@
     1. Clone Supernova project
   </a>
   
-    <nav class="md-nav" aria-label="1. Clone Supernova project">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-linux-or-osx" class="md-nav__link">
-    For Linux or OSX:
-  </a>
-  
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-windows" class="md-nav__link">
-    For Windows:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-download-and-install-android-studio" class="md-nav__link">
-    2. Download and install Android Studio
+  <a href="#2-download-xcode" class="md-nav__link">
+    2. Download Xcode
   </a>
   
 </li>
@@ -367,18 +367,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../building-for-ios/" title="Building for iOS" class="md-nav__link">
-      Building for iOS
-    </a>
   </li>
 
         
@@ -494,11 +482,11 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#work-for-all-platforms" class="md-nav__link">
-    Work for all platforms
+  <a href="#work-only-for-osx" class="md-nav__link">
+    Work only for OSX
   </a>
   
-    <nav class="md-nav" aria-label="Work for all platforms">
+    <nav class="md-nav" aria-label="Work only for OSX">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -506,31 +494,11 @@
     1. Clone Supernova project
   </a>
   
-    <nav class="md-nav" aria-label="1. Clone Supernova project">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#for-linux-or-osx" class="md-nav__link">
-    For Linux or OSX:
-  </a>
-  
 </li>
         
           <li class="md-nav__item">
-  <a href="#for-windows" class="md-nav__link">
-    For Windows:
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-download-and-install-android-studio" class="md-nav__link">
-    2. Download and install Android Studio
+  <a href="#2-download-xcode" class="md-nav__link">
+    2. Download Xcode
   </a>
   
 </li>
@@ -559,7 +527,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/deslon/supernova-docs/edit/master/docs/getting-started/building-project/building-for-android.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/deslon/supernova-docs/edit/master/docs/getting-started/building-project/building-for-ios.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -567,22 +535,15 @@
                   
                 
                 
-                  <h1>Building for Android</h1>
+                  <h1>Building for iOS</h1>
                 
-                <h2 id="work-for-all-platforms">Work for all platforms<a class="headerlink" href="#work-for-all-platforms" title="Permanent link">&para;</a></h2>
+                <h2 id="work-only-for-osx">Work only for OSX<a class="headerlink" href="#work-only-for-osx" title="Permanent link">&para;</a></h2>
 <h3 id="1-clone-supernova-project">1. Clone Supernova project<a class="headerlink" href="#1-clone-supernova-project" title="Permanent link">&para;</a></h3>
-<h4 id="for-linux-or-osx">For Linux or OSX:<a class="headerlink" href="#for-linux-or-osx" title="Permanent link">&para;</a></h4>
 <p>Execute in terminal:</p>
 <p><code>git clone https://github.com/deslon/supernova.git</code></p>
-<h4 id="for-windows">For Windows:<a class="headerlink" href="#for-windows" title="Permanent link">&para;</a></h4>
-<p>On Github, navigate to the main page of the repository.</p>
-<p>Under your repository name, click <strong>Clone or download</strong>.</p>
-<h3 id="2-download-and-install-android-studio">2. Download and install Android Studio<a class="headerlink" href="#2-download-and-install-android-studio" title="Permanent link">&para;</a></h3>
-<p>Download latest version of Android Studio (http://tools.android.com/download/studio/canary/latest).</p>
-<p>Install it following instructions.</p>
+<h3 id="2-download-xcode">2. Download Xcode<a class="headerlink" href="#2-download-xcode" title="Permanent link">&para;</a></h3>
 <h3 id="3-open-project">3. Open project<a class="headerlink" href="#3-open-project" title="Permanent link">&para;</a></h3>
-<p>Open Android Studio, click in "Open an existing Android Studio project" and select <code>workspace/android/</code> where Supernova was cloned.</p>
-<p>If asked to install Android NDK, CMake and or other addons, select yes.</p>
+<p>In Supernova directory, open Xcode project workspace in: <code>workspaces/ios/</code></p>
                 
               
               
@@ -601,7 +562,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../coordinate-systems/" title="Coordinate systems" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../building-for-android/" title="Building for Android" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -610,19 +571,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Coordinate systems
+                Building for Android
               </div>
             </div>
           </a>
         
         
-          <a href="../building-for-ios/" title="Building for iOS" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../building-for-html5/" title="Building for HTML5" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Building for iOS
+                Building for HTML5
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
