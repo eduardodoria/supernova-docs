@@ -58,6 +58,8 @@ def build_command(site_dir, tags, default, latest):
         print("Building %s to %s" % (tag, tag_dir), flush=True)
         subprocess.run(['mkdocs', 'build', '--site-dir', tag_dir, "--clean"]).check_returncode()
 
+        g.checkout()
+
     g.checkout('master')
 
 if __name__ == '__main__':
