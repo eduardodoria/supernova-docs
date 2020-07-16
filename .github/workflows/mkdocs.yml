@@ -18,12 +18,8 @@ jobs:
     
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install mkdocs
-        pip install mkdocs-material
-        pip install markdown-fenced-code-tabs
-        pip install gitpython
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        python3 -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip3 install -r requirements.txt --upgrade; fi
     
     - name: Build MKDocs
       run: |
@@ -33,11 +29,11 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: docs
-        path: site
+        path: build/site
     
     - name: Deploy to GitHub Pages
       if: success()
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./site
+        publish_dir: ./build/site
